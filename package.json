@@ -1,7 +1,7 @@
 {
-    "name": "babylonjs-typescript-webpack-simple-scene",
+    "name": "3d-building-babylonjs-webxr",
     "version": "0.0.1",
-    "description": "A simple scene using Babylon.js, typescript and webpack. What could go wrong?",
+    "description": "A simple 3D scene",
     "main": "index.ts",
     "dependencies": {
         "@babylonjs/core": "5.0.0-alpha.6",
