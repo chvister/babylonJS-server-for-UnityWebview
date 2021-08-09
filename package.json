@@ -31,7 +31,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/RaananW/babylonjs-webpack-es6.git"
+        "url": "git+https://github.com/iteria-poc/3d-building-babylonjs-webxr"
     },
     "keywords": [
         "Babylon.js",
@@ -39,15 +39,5 @@
         "getting started",
         "typescript",
         "es6"
-    ],
-    "author": {
-        "name": "Raanan Weber",
-        "email": "info@raananweber.com",
-        "url": "http://blog.raananweber.com/"
-    },
-    "license": "Apache-2.0",
-    "bugs": {
-        "url": "https://github.com/RaananW/babylonjs-webpack-es6/issues"
-    },
-    "homepage": "https://github.com/RaananW/babylonjs-webpack-es6"
+    ]
 }
