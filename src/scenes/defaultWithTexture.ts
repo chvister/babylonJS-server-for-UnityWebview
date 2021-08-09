@@ -29,7 +29,7 @@ export class DefaultSceneWithTexture implements CreateSceneClass {
             "scenes/interior/scene.glb",
             scene,
             function (m) {
-                console.log(m);
+                // console.log(m);
             }
         );
 
