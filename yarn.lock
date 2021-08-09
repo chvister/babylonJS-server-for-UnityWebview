@@ -23,20 +23,28 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@babylonjs/core@5.0.0-alpha.6":
-  version "5.0.0-alpha.6"
-  resolved "https://registry.yarnpkg.com/@babylonjs/core/-/core-5.0.0-alpha.6.tgz#41d71d41e902ad9c802508ffd8c10973d557cbf9"
-  integrity sha512-7Tg/MByT6nUHpV5TjVj1xHsmnbrk1hGMk/jKCui6bydR6YaGrkE0yoLAmJXX5ALGXhhKLIDj+qg3QHWVFsi1lA==
+"@babylonjs/core@4.2.0", "@babylonjs/core@^4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@babylonjs/core/-/core-4.2.0.tgz#d1cfd43d7e3d2e58cde79083f04eeb607f6c8f18"
+  integrity sha512-sZQigPvMDc0pcgwlKvTF5gsMzGwT8gelQIOyxELrohdFu12pHGhIr61+yVxxq9tpCdzyYD9kS8LM0w2y+5ypkg==
   dependencies:
     tslib ">=1.10.0"
 
-"@babylonjs/loaders@5.0.0-alpha.6":
-  version "5.0.0-alpha.6"
-  resolved "https://registry.yarnpkg.com/@babylonjs/loaders/-/loaders-5.0.0-alpha.6.tgz#cb3ea3bf8718422ef75d3630d14f77c8a16c33cc"
-  integrity sha512-mnUkcA2a4Mdo484q7ckw+QxPYM8mfMaZjfSyt4YjwUxXRdOvbQUPyk/ZojrQjXajEFdzpxhqEU5Iu5CZr01w1A==
+"@babylonjs/gui@^4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@babylonjs/gui/-/gui-4.2.0.tgz#c2a35ca6724759731fe0c4ddbfe2490301847f93"
+  integrity sha512-AQnqwFDmQ05FAw4B0BPVUFqWgdSKVI23qVHm/uOOMBQhMo8+WE2pTNATm6Qw/HDVLCp5qUjwIij/3JtG5s0fBw==
   dependencies:
-    "@babylonjs/core" "5.0.0-alpha.6"
-    babylonjs-gltf2interface "5.0.0-alpha.6"
+    "@babylonjs/core" "4.2.0"
+    tslib ">=1.10.0"
+
+"@babylonjs/loaders@^4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@babylonjs/loaders/-/loaders-4.2.0.tgz#a9902dc277c16dcd22cd1907f86310e211c247cb"
+  integrity sha512-feCmp4I+suBNLko3wGFNZpDg1Bqt9NxEuhKZ+epmaIWSqKEQAMhDvdehcq9vETTVKULkzRGZdDrZmEX0weG80g==
+  dependencies:
+    "@babylonjs/core" "4.2.0"
+    babylonjs-gltf2interface "4.2.0"
     tslib ">=1.10.0"
 
 "@discoveryjs/json-ext@^0.5.0":
@@ -564,10 +572,10 @@ atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-babylonjs-gltf2interface@5.0.0-alpha.6:
-  version "5.0.0-alpha.6"
-  resolved "https://registry.yarnpkg.com/babylonjs-gltf2interface/-/babylonjs-gltf2interface-5.0.0-alpha.6.tgz#8c2437e40c895a0615e8be48d5177bd4c82f0410"
-  integrity sha512-rlsNUn+/anLusgeYwgiRmgo2KtTDA8HmaXTbaAesUHp4lSQfmCmWyl1SpTdGgBeBeG2ZVD9mOrSVamBc+L7YyA==
+babylonjs-gltf2interface@4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/babylonjs-gltf2interface/-/babylonjs-gltf2interface-4.2.0.tgz#b0ef1e11e3574cf2c6f573d0c5c34857a2a7b322"
+  integrity sha512-Fn/ThxwZWP9kEAqk+9FX9CAeF4ah/I0/8wzAZR8MQuYqlYpEfM+E/IztJ+4LoOOxQYMWNs5lgj8OXSkX0tqc4g==
 
 balanced-match@^1.0.0:
   version "1.0.2"
