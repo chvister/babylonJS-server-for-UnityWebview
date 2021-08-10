@@ -5,7 +5,7 @@ import { AdvancedDynamicTexture, Button, InputText } from '@babylonjs/gui'
 import "@babylonjs/loaders/glTF/2.0/glTFLoader";
 
 // Basic setup
-const canvas = document.querySelector("#app");
+const canvas = document.querySelector("#renderCanvas");
 //@ts-ignore
 const engine = new Engine(canvas, true, null, true);
 const scene = new Scene(engine);
