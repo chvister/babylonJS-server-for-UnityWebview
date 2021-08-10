@@ -1,5 +1,5 @@
 // import { CreateSceneClass } from "../createScene";
-import { Engine, Scene, FreeCamera, UniversalCamera, Vector3, HemisphericLight, Mesh, SceneLoader } from "@babylonjs/core";
+import { Engine, Scene, FreeCamera, UniversalCamera, Vector3, HemisphericLight, Mesh, SceneLoader, StandardMaterial, Color3, CircleEase, EasingFunction } from "@babylonjs/core";
 import { AdvancedDynamicTexture, Button, InputText } from '@babylonjs/gui'
 
 import "@babylonjs/loaders/glTF/2.0/glTFLoader";
@@ -35,6 +35,7 @@ const plane2 = Mesh.CreatePlane("plane2", 2, scene);
 plane2.position.y = 5;
 plane2.position.z = 5;
 plane2.position.x = 3;
+    //@ts-ignore
 const advancedTexture2 = AdvancedDynamicTexture.CreateForMesh(plane2);
 
 const button1 = Button.CreateSimpleButton("but1", "Click");
@@ -59,9 +60,25 @@ input.fontSize = 100;
 input.background = "gray";
 advancedTexture.addControl(input);
 
+// //Ground
+var ground = Mesh.CreatePlane("ground", 50.0, scene);
+ground.material = new StandardMaterial("groundMat", scene);
+//@ts-ignore
+ground.material.diffuseColor = new Color3(1, 1, 1);
+ground.material.backFaceCulling = false;
+ground.position = new Vector3(0, 0, 0);
+ground.rotation = new Vector3(Math.PI / 2, 0, 0);
+
+scene.gravity = new Vector3(0, -9.81, 0);
+scene.collisionsEnabled = true;
+
+camera.checkCollisions = true;
+camera.applyGravity = true;
+camera.ellipsoid = new Vector3(1, 3, 1);
+
+ground.checkCollisions = true;
 
 window.addEventListener("resize", () => engine.resize());
-
 engine.runRenderLoop(() => scene.render());
 
 SceneLoader.ImportMesh(
@@ -70,6 +87,6 @@ SceneLoader.ImportMesh(
     "scenes/interior/scene.glb",
     scene,
     function (m) {
-        // console.log(m);
+        console.log(m);
     }
 );
