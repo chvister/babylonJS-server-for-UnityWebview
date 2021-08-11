@@ -82,56 +82,63 @@ const roomModel = SceneLoader.ImportMesh(
             }
         }
         //more datas
-        const roomData2 = m
-        for (let i = 0; i < roomData2.length; i++) {
-            roomData2[i].actionManager = new ActionManager(scene);
+        const roomFullData = m
+        for (let i = 0; i < roomFullData.length; i++) {
+            roomFullData[i].actionManager = new ActionManager(scene);
             //@ts-ignore
-            roomData2[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnDoublePickTrigger, function () {
-                console.log(roomData2[i].name);
-                var advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
-                advancedTexture.idealWidth = 600;
-
-                var textSquare = new Rectangle();
-                textSquare.width = 0.1;
+            roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnDoublePickTrigger, function () {
+                console.log(roomFullData[i].name);
+                const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
+                modelTexture.idealWidth = 600;
+                const textSquare = new Rectangle();
+                textSquare.width = 0.14;
                 textSquare.height = "20px";
                 textSquare.cornerRadius = 20;
                 textSquare.color = "Orange";
                 textSquare.thickness = 4;
                 textSquare.background = "green";
-                advancedTexture.addControl(textSquare);
+                modelTexture.addControl(textSquare);
                 //@ts-ignore
-                textSquare.linkWithMesh(roomData2[i]);
+                textSquare.linkWithMesh(roomFullData[i]);
                 textSquare.linkOffsetY = -150;
 
-                var label = new TextBlock();
+                const labelModel = new TextBlock();
                 //@ts-ignore
-                label.text = roomData2[i].name;
-                textSquare.addControl(label);
+                labelModel.text = roomFullData[i].name;
+                textSquare.addControl(labelModel);
 
-                var target = new Ellipse();
-                target.width = "7px";
-                target.height = "7px";
-                target.color = "Orange";
-                target.thickness = 2;
-                target.background = "green";
-                advancedTexture.addControl(target);
+                const targetModel = new Ellipse();
+                targetModel.width = "7px";
+                targetModel.height = "7px";
+                targetModel.color = "Orange";
+                targetModel.thickness = 2;
+                targetModel.background = "green";
+                modelTexture.addControl(targetModel);
                 //@ts-ignore
-                target.linkWithMesh(roomData2[i]);
+                targetModel.linkWithMesh(roomFullData[i]);
 
-                var line = new Line();
-                line.lineWidth = 4;
-                line.color = "Orange";
-                line.y2 = 10;
-                line.linkOffsetY = -3;
-                advancedTexture.addControl(line);
+                const lineModel = new Line();
+                lineModel.lineWidth = 4;
+                lineModel.color = "Orange";
+                lineModel.y2 = 10;
+                lineModel.linkOffsetY = -3;
+                modelTexture.addControl(lineModel);
                 //@ts-ignore
-                line.linkWithMesh(roomData2[i]);
-                line.connectedControl = textSquare;
+                lineModel.linkWithMesh(roomFullData[i]);
+                lineModel.connectedControl = textSquare;
             }));
 
-            if (roomData2[i].name === 'windowGlass') {
+            if (roomFullData[i].name === 'windowGlass') {
                 // roomData2[i].checkCollisions = true;
             }
+            //roteate lamp
+            //@ts-ignore
+            const lamp = m[0]._children[10];
+            lamp.rotationQuaternion = undefined;
+    
+            scene.beforeRender = () => {
+                lamp.rotation.y += 0.01;
+            };
         }
     }
 );
