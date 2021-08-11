@@ -1,5 +1,8 @@
 // import { CreateSceneClass } from "../createScene";
-import { Engine, Scene, FreeCamera, UniversalCamera, Vector3, HemisphericLight, Mesh, MeshBuilder, SceneLoader, StandardMaterial, Color3, CircleEase, EasingFunction } from "@babylonjs/core";
+import {
+    Engine, Scene, FreeCamera, UniversalCamera, Vector3, HemisphericLight, Mesh, MeshBuilder, SceneLoader, StandardMaterial, Color3, ActionManager,
+    ExecuteCodeAction, CircleEase, EasingFunction
+} from "@babylonjs/core";
 import { AdvancedDynamicTexture, Button, InputText } from '@babylonjs/gui'
 
 import "@babylonjs/loaders/glTF/2.0/glTFLoader";
@@ -81,7 +84,7 @@ scene.collisionsEnabled = true;
 
 camera.checkCollisions = true;
 camera.applyGravity = true;
-camera.ellipsoid = new Vector3(1, 3, 1);
+camera.ellipsoid = new Vector3(1.5, 3, 1.5);
 
 ground.checkCollisions = true;
 
@@ -103,56 +106,69 @@ const roomModel = SceneLoader.ImportMesh(
         const roomData = m[0]._children
         console.log(roomData, 'roomData');
         for (let i = 0; i < roomData.length; i++) {
-            const lampPlane = Mesh.CreatePlane(roomData[i].name, 2, scene);
-            // plane.parent = sphere;
-            lampPlane.position.x = roomData[i]._absolutePosition._x;
-            lampPlane.position.y = roomData[i]._absolutePosition._y + 3.5;
-            lampPlane.position.z = roomData[i]._absolutePosition._z;
-            lampPlane.billboardMode = Mesh.BILLBOARDMODE_ALL;
+            const modelPlanes = Mesh.CreatePlane(roomData[i].name, 2, scene);
+            modelPlanes.position.x = roomData[i]._absolutePosition._x;
+            modelPlanes.position.y = roomData[i]._absolutePosition._y + 3.5;
+            modelPlanes.position.z = roomData[i]._absolutePosition._z;
+            modelPlanes.billboardMode = Mesh.BILLBOARDMODE_ALL;
             //@ts-ignore
-            const lampTexture = AdvancedDynamicTexture.CreateForMesh(lampPlane);
+            const modelTexture = AdvancedDynamicTexture.CreateForMesh(modelPlanes);
 
-            const inputLamp = new InputText();
-            inputLamp.width = 1;
-            inputLamp.maxWidth = 1;
-            inputLamp.height = "500px";
-            inputLamp.text = roomData[i].name;
-            inputLamp.color = "red";
-            inputLamp.fontSize = 100;
-            inputLamp.background = "transparent";
-            lampTexture.addControl(inputLamp);
+            const modelInputs = new InputText();
+            modelInputs.width = 1;
+            modelInputs.maxWidth = 1;
+            modelInputs.height = "500px";
+            modelInputs.text = roomData[i].name;
+            modelInputs.color = "red";
+            modelInputs.fontSize = 100;
+            modelInputs.background = "transparent";
+            modelTexture.addControl(modelInputs);
+
+            //click on mesh
+            roomData[i].actionManager = new ActionManager(scene);
+            roomData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
+                // alert(roomData[i].name);
+                console.log(roomData[i].name);
+            }));
+            //avoid collision
+            if(roomData[i].name === 'featureWall' || roomData[i].name === 'Walls'){
+                roomData[i].checkCollisions = true;
+            }
         }
 
         //more datas
         const roomData2 = m
-        // console.log(roomData2,'roomData2'); 
+        for (let i = 0; i < roomData2.length; i++) {
+            roomData2[i].actionManager = new ActionManager(scene);
+            //@ts-ignore
+            roomData2[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
+                console.log(roomData2[i].name);
+            }));
+            if(roomData2[i].name === 'windowGlass'){
+                roomData2[i].checkCollisions = true;
+            }
+            // const lampPlane = Mesh.CreatePlane(roomData2[i].name, 2, scene);
+            // // plane.parent = sphere;
+            //             //@ts-ignore
+            // lampPlane.position.x = roomData2[i]._absolutePosition._x;
+            //             //@ts-ignore
+            // lampPlane.position.y = roomData2[i]._absolutePosition._y;
+            //             //@ts-ignore
+            // lampPlane.position.z = roomData2[i]._absolutePosition._z;
+            // lampPlane.billboardMode = Mesh.BILLBOARDMODE_ALL;
+            // //@ts-ignore
+            // const lampTexture = AdvancedDynamicTexture.CreateForMesh(lampPlane);
 
-        // for (let i = 0; i < roomData2.length; i++) {
-        //     const lampPlane = Mesh.CreatePlane(roomData2[i].name, 2, scene);
-        //     // plane.parent = sphere;
-        //                 //@ts-ignore
-        //     lampPlane.position.x = roomData2[i]._absolutePosition._x;
-        //                 //@ts-ignore
-        //     lampPlane.position.y = roomData2[i]._absolutePosition._y;
-        //                 //@ts-ignore
-        //     lampPlane.position.z = roomData2[i]._absolutePosition._z;
-        //     lampPlane.billboardMode = Mesh.BILLBOARDMODE_ALL;
-        //     //@ts-ignore
-        //     const lampTexture = AdvancedDynamicTexture.CreateForMesh(lampPlane);
-
-        //     const inputLamp = new InputText();
-        //     inputLamp.width = 1;
-        //     inputLamp.maxWidth = 1;
-        //     inputLamp.height = "500px";
-        //     inputLamp.text = roomData2[i].name;
-        //     inputLamp.color = "red";
-        //     inputLamp.fontSize = 100;
-        //     inputLamp.background = "transparent";
-        //     lampTexture.addControl(inputLamp);
-        // }
-        //
-        // roomData[8]._absolutePosition._x = 6
-        // console.log(roomData[8],'roomData[8]._absolutePosition._x'); 
+            // const inputLamp = new InputText();
+            // inputLamp.width = 1;
+            // inputLamp.maxWidth = 1;
+            // inputLamp.height = "500px";
+            // inputLamp.text = roomData2[i].name;
+            // inputLamp.color = "red";
+            // inputLamp.fontSize = 100;
+            // inputLamp.background = "transparent";
+            // lampTexture.addControl(inputLamp);
+        }
     }
 );
 
