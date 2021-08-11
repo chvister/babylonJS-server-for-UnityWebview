@@ -55,6 +55,13 @@ ground.checkCollisions = true;
 window.addEventListener("resize", () => engine.resize());
 engine.runRenderLoop(() => scene.render());
 
+//add xr
+const env = scene.createDefaultEnvironment();
+const xr =  scene.createDefaultXRExperienceAsync({
+    //@ts-ignore
+    floorMeshes: [env.ground]
+});
+
 const roomModel = SceneLoader.ImportMesh(
     "",
     "http://127.0.0.1:5502/",
@@ -131,6 +138,14 @@ const roomModel = SceneLoader.ImportMesh(
             if (roomFullData[i].name === 'windowGlass') {
                 // roomData2[i].checkCollisions = true;
             }
+            //roteate lamp
+            //@ts-ignore
+            const lamp = m[0]._children[10];
+            lamp.rotationQuaternion = undefined;
+    
+            scene.beforeRender = () => {
+                lamp.rotation.y += 0.01;
+            };
         }
     }
 );
