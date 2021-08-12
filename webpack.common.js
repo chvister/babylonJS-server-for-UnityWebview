@@ -51,6 +51,9 @@ module.exports = {
             },
         ],
     },
+    experiments: {
+        topLevelAwait: true,
+    },
     plugins: [
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin({

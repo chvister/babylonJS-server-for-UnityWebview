@@ -57,11 +57,16 @@ engine.runRenderLoop(() => scene.render());
 
 //add xr
 const env = scene.createDefaultEnvironment();
-const xr =  scene.createDefaultXRExperienceAsync({
+
+//@ts-ignore
+const xr = await scene.createDefaultXRExperienceAsync({
     //@ts-ignore
     // floorMeshes: [env.ground]
+    //    xrInput: defaultXRExperience.input,
+    //@ts-ignore   
+    floorMeshes: [env.ground] /* Array of meshes to be used as landing points */
 });
-console.log(window.location.href); 
+
 const roomModel = SceneLoader.ImportMesh(
     "",
     "scene/",
@@ -94,7 +99,7 @@ const roomModel = SceneLoader.ImportMesh(
             roomFullData[i].actionManager = new ActionManager(scene);
             //@ts-ignore
             roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnDoublePickTrigger, function () {
-            // roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
+                // roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
                 console.log(roomFullData[i].name);
                 const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
                 modelTexture.idealWidth = 600;
@@ -136,6 +141,108 @@ const roomModel = SceneLoader.ImportMesh(
                 lineModel.connectedControl = textSquare;
             }));
 
+            xr.input.onControllerAddedObservable.add((controller: any) => {
+                controller.onMotionControllerInitObservable.add((motionController: any) => {
+                    if (motionController.handness === 'right') {
+                        const xr_ids = motionController.getComponentIds();
+                        let triggerComponent = motionController.getComponent(xr_ids[0]);//xr-standard-trigger
+                        triggerComponent.onButtonStateChangedObservable.add(() => {
+                            if (triggerComponent.pressed) {
+                                const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
+                                modelTexture.idealWidth = 600;
+                                const textSquare = new Rectangle();
+                                textSquare.width = 0.14;
+                                textSquare.height = "20px";
+                                textSquare.cornerRadius = 20;
+                                textSquare.color = "Orange";
+                                textSquare.thickness = 4;
+                                textSquare.background = "green";
+                                modelTexture.addControl(textSquare);
+                                //@ts-ignore
+                                // textSquare.linkWithMesh(roomFullData[10]);
+                                textSquare.linkWithMesh(roomFullData[i]);
+                                textSquare.linkOffsetY = -50;
+
+                                const labelModel = new TextBlock();
+                                //@ts-ignore
+                                // labelModel.text = roomFullData[10].name;
+                                labelModel.text = roomFullData[i].name;
+                                textSquare.addControl(labelModel);
+
+                                const targetModel = new Ellipse();
+                                targetModel.width = "7px";
+                                targetModel.height = "7px";
+                                targetModel.color = "Orange";
+                                targetModel.thickness = 2;
+                                targetModel.background = "green";
+                                modelTexture.addControl(targetModel);
+                                //@ts-ignore
+                                // targetModel.linkWithMesh(roomFullData[10]);
+                                targetModel.linkWithMesh(roomFullData[i]);
+
+                                const lineModel = new Line();
+                                lineModel.lineWidth = 4;
+                                lineModel.color = "Orange";
+                                lineModel.y2 = 10;
+                                lineModel.linkOffsetY = -3;
+                                modelTexture.addControl(lineModel);
+                                //@ts-ignore
+                                // lineModel.linkWithMesh(roomFullData[10]);
+                                lineModel.linkWithMesh(roomFullData[i]);
+                                lineModel.connectedControl = textSquare;
+
+                            } else {
+                                console.log('squeze off'); 
+                            }
+                        });
+                        let thumbrestComponent = motionController.getComponent(xr_ids[5]);
+                        let squeezeComponent = motionController.getComponent(xr_ids[1]);//xr-standard-squeeze
+                        squeezeComponent.onButtonStateChangedObservable.add(() => {
+                            if (squeezeComponent.pressed) {
+                                console.log('x'); 
+
+                            } else {
+                                console.log('x'); 
+                            }
+                        });
+                        let thumbstickComponent = motionController.getComponent(xr_ids[2]);//xr-standard-thumbstick
+                        thumbstickComponent.onButtonStateChangedObservable.add(() => {
+                            if (thumbstickComponent.pressed) {
+                                console.log('x'); 
+                            } else {
+                                console.log('x'); 
+                            }
+
+                        });
+                        //  thumbstickComponent.onAxisValueChangedObservable.add((axes) => {
+                        //      //Box_Right_ThumbStick is moving according to stick axes but camera rotation is also changing..
+                        //     // Box_Right_ThumbStick.position.x += (axes.x)/100;
+                        //     // Box_Right_ThumbStick.position.y += (axes.y)/100;
+                        //     // console.log(values.x, values.y);
+                        //  });
+
+                        // let abuttonComponent = motionController.getComponent(roomFullData[i]);//a-button
+                        // abuttonComponent.onButtonStateChangedObservable.add(() => {
+                        //     if (abuttonComponent.pressed) {
+                        //         console.log('x');
+                        //     } else {
+                        //         console.log('x');
+                        //     }
+                        // });
+                        let bbuttonComponent = motionController.getComponent(xr_ids[4]);//b-button
+                        bbuttonComponent.onButtonStateChangedObservable.add(() => {
+                            if (bbuttonComponent.pressed) {
+                                console.log('x');
+                            } else {
+                                console.log('x');
+                            }
+                        });
+                    }
+
+                })
+
+            });
+
             if (roomFullData[i].name === 'windowGlass') {
                 roomFullData[i].checkCollisions = true;
             }
@@ -143,7 +250,7 @@ const roomModel = SceneLoader.ImportMesh(
             //@ts-ignore
             const lamp = m[0]._children[10];
             lamp.rotationQuaternion = undefined;
-    
+
             scene.beforeRender = () => {
                 lamp.rotation.y += 0.01;
             };
