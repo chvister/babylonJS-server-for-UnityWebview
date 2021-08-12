@@ -18,7 +18,7 @@ const canvas = document.querySelector("#renderCanvas");
 const engine = new Engine(canvas, true, null, true);
 const scene = new Scene(engine);
 
-const camera = new FreeCamera("FreeCamera", new Vector3(0, 5, -10), scene);
+const camera = new FreeCamera("FreeCamera", new Vector3(0, 5, -5), scene);
 camera.speed = 0.7
 
 camera.attachControl(canvas, true);
@@ -59,7 +59,7 @@ engine.runRenderLoop(() => scene.render());
 const env = scene.createDefaultEnvironment();
 const xr =  scene.createDefaultXRExperienceAsync({
     //@ts-ignore
-    floorMeshes: [env.ground]
+    // floorMeshes: [env.ground]
 });
 
 const roomModel = SceneLoader.ImportMesh(
@@ -85,7 +85,7 @@ const roomModel = SceneLoader.ImportMesh(
             }));
             //avoid collision
             if (roomData[i].name === 'featureWall' || roomData[i].name === 'Walls') {
-                // roomData[i].checkCollisions = true;
+                roomData[i].checkCollisions = true;
             }
         }
         //more datas
@@ -93,7 +93,8 @@ const roomModel = SceneLoader.ImportMesh(
         for (let i = 0; i < roomFullData.length; i++) {
             roomFullData[i].actionManager = new ActionManager(scene);
             //@ts-ignore
-            roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnDoublePickTrigger, function () {
+            // roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnDoublePickTrigger, function () {
+            roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
                 console.log(roomFullData[i].name);
                 const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
                 modelTexture.idealWidth = 600;
@@ -136,7 +137,7 @@ const roomModel = SceneLoader.ImportMesh(
             }));
 
             if (roomFullData[i].name === 'windowGlass') {
-                // roomData2[i].checkCollisions = true;
+                roomFullData[i].checkCollisions = true;
             }
             //roteate lamp
             //@ts-ignore
