@@ -64,8 +64,8 @@ const xr =  scene.createDefaultXRExperienceAsync({
 console.log(window.location.href); 
 const roomModel = SceneLoader.ImportMesh(
     "",
-    window.location.href,
-    "scene/scene.glb",
+    "scene/",
+    "scene.glb",
     scene,
     function (m) {
         console.log(m);
@@ -93,8 +93,8 @@ const roomModel = SceneLoader.ImportMesh(
         for (let i = 0; i < roomFullData.length; i++) {
             roomFullData[i].actionManager = new ActionManager(scene);
             //@ts-ignore
-            // roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnDoublePickTrigger, function () {
-            roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
+            roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnDoublePickTrigger, function () {
+            // roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
                 console.log(roomFullData[i].name);
                 const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
                 modelTexture.idealWidth = 600;
