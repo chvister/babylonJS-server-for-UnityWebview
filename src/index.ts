@@ -61,11 +61,11 @@ const xr =  scene.createDefaultXRExperienceAsync({
     //@ts-ignore
     // floorMeshes: [env.ground]
 });
-
+console.log(window.location.href); 
 const roomModel = SceneLoader.ImportMesh(
     "",
-    "http://127.0.0.1:5502/",
-    "scenes/interior/scene.glb",
+    window.location.href,
+    "scene/scene.glb",
     scene,
     function (m) {
         console.log(m);
