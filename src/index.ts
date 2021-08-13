@@ -64,7 +64,7 @@ const xr = await scene.createDefaultXRExperienceAsync({
     // floorMeshes: [env.ground]
     //    xrInput: defaultXRExperience.input,
     //@ts-ignore   
-    floorMeshes: [env.ground] /* Array of meshes to be used as landing points */
+    // floorMeshes: [env.ground] /* Array of meshes to be used as landing points */
 });
 
 const roomModel = SceneLoader.ImportMesh(
