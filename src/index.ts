@@ -98,8 +98,8 @@ const roomModel = SceneLoader.ImportMesh(
         for (let i = 0; i < roomFullData.length; i++) {
             roomFullData[i].actionManager = new ActionManager(scene);
             //@ts-ignore
-            roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnDoublePickTrigger, function () {
-                // roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
+            // roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnDoublePickTrigger, function () {
+                roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
                 console.log(roomFullData[i].name);
                 const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
                 modelTexture.idealWidth = 600;
@@ -147,100 +147,105 @@ const roomModel = SceneLoader.ImportMesh(
         }
 
         
-        //controller input
-        xr.input.onControllerAddedObservable.add((controller) => {
-            controller.onMotionControllerInitObservable.add((motionController) => {
-                if (motionController.handness === 'right') {
-                    const xr_ids = motionController.getComponentIds();
-                    let triggerComponent = motionController.getComponent(xr_ids[0]);//xr-standard-trigger
-                    triggerComponent.onButtonStateChangedObservable.add(() => {
-                        if (triggerComponent.pressed) {
-                            const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
-                            modelTexture.idealWidth = 600;
-                            const textSquare = new Rectangle();
-                            textSquare.width = 0.14;
-                            textSquare.height = "20px";
-                            textSquare.cornerRadius = 20;
-                            textSquare.color = "Orange";
-                            textSquare.thickness = 4;
-                            textSquare.background = "green";
-                            modelTexture.addControl(textSquare);
-                            //@ts-ignore
-                            textSquare.linkWithMesh(roomFullData[40]);
-                            // textSquare.linkWithMesh(roomFullData[i]);
-                            textSquare.linkOffsetY = -50;
+        // //controller input
+        // xr.input.onControllerAddedObservable.add((controller) => {
+        //     console.log(xr.input,'xr.input'); 
+        //     controller.onMotionControllerInitObservable.add((motionController) => {
+        //         console.log(motionController,'motionController'); 
+        //         console.log(controller,'controller'); 
+                                  
+        //         if (motionController.handness === 'right') {
+        //             const xr_ids = motionController.getComponentIds();
+        //             console.log(xr_ids,'xr_ids'); 
+        //             console.log(xr_ids,'xr_ids'); 
+        //             let triggerComponent = motionController.getComponent(xr_ids[0]);//xr-standard-trigger
+        //             triggerComponent.onButtonStateChangedObservable.add(() => {
+        //                 if (triggerComponent.pressed) {
+        //                     // for (let i = 0; i < roomFullData.length; i++) {
+        //                     const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
+        //                     modelTexture.idealWidth = 600;
+        //                     const textSquare = new Rectangle();
+        //                     textSquare.width = 0.14;
+        //                     textSquare.height = "20px";
+        //                     textSquare.cornerRadius = 20;
+        //                     textSquare.color = "Orange";
+        //                     textSquare.thickness = 4;
+        //                     textSquare.background = "green";
+        //                     modelTexture.addControl(textSquare);
+        //                     //@ts-ignore
+        //                     textSquare.linkWithMesh(roomFullData[40]);
+        //                     // textSquare.linkWithMesh(roomFullData[i]);
+        //                     textSquare.linkOffsetY = -50;
 
-                            const labelModel = new TextBlock();
-                            //@ts-ignore
-                            labelModel.text = roomFullData[40].name;
-                            // labelModel.text = roomFullData[i].name;
-                            textSquare.addControl(labelModel);
+        //                     const labelModel = new TextBlock();
+        //                     //@ts-ignore
+        //                     labelModel.text = roomFullData[40].name;
+        //                     // labelModel.text = roomFullData[i].name;
+        //                     textSquare.addControl(labelModel);
 
-                            const targetModel = new Ellipse();
-                            targetModel.width = "7px";
-                            targetModel.height = "7px";
-                            targetModel.color = "Orange";
-                            targetModel.thickness = 2;
-                            targetModel.background = "green";
-                            modelTexture.addControl(targetModel);
-                            //@ts-ignore
-                            targetModel.linkWithMesh(roomFullData[40]);
-                            // targetModel.linkWithMesh(roomFullData[i]);
+        //                     const targetModel = new Ellipse();
+        //                     targetModel.width = "7px";
+        //                     targetModel.height = "7px";
+        //                     targetModel.color = "Orange";
+        //                     targetModel.thickness = 2;
+        //                     targetModel.background = "green";
+        //                     modelTexture.addControl(targetModel);
+        //                     //@ts-ignore
+        //                     targetModel.linkWithMesh(roomFullData[40]);
+        //                     // targetModel.linkWithMesh(roomFullData[i]);
 
-                            const lineModel = new Line();
-                            lineModel.lineWidth = 4;
-                            lineModel.color = "Orange";
-                            lineModel.y2 = 10;
-                            lineModel.linkOffsetY = -3;
-                            modelTexture.addControl(lineModel);
-                            //@ts-ignore
-                            lineModel.linkWithMesh(roomFullData[40]);
-                            // lineModel.linkWithMesh(roomFullData[i]);
-                            lineModel.connectedControl = textSquare;
-                        } else {
-                            console.log('off');
-                        }
-                    });
-                    let squeezeComponent = motionController.getComponent(xr_ids[1]);//xr-standard-squeeze
-                    squeezeComponent.onButtonStateChangedObservable.add(() => {
-                        if (squeezeComponent.pressed) {
-                            console.log('x');
-                        } else {
-                            console.log('x');
-                        }
-                    });
-                    let thumbstickComponent = motionController.getComponent(xr_ids[2]);//xr-standard-thumbstick
-                    thumbstickComponent.onButtonStateChangedObservable.add(() => {
-                        if (thumbstickComponent.pressed) {
-                            console.log('x');
-                        } else {
-                            console.log('x');
-                        }
+        //                     const lineModel = new Line();
+        //                     lineModel.lineWidth = 4;
+        //                     lineModel.color = "Orange";
+        //                     lineModel.y2 = 10;
+        //                     lineModel.linkOffsetY = -3;
+        //                     modelTexture.addControl(lineModel);
+        //                     //@ts-ignore
+        //                     lineModel.linkWithMesh(roomFullData[40]);
+        //                     // lineModel.linkWithMesh(roomFullData[i]);
+        //                     lineModel.connectedControl = textSquare;
+        //                 } else {
+        //                     console.log('triggerComponent off');
+        //                 }
+        //             });
+        //             let squeezeComponent = motionController.getComponent(xr_ids[1]);//xr-standard-squeeze
+        //             squeezeComponent.onButtonStateChangedObservable.add(() => {
+        //                 if (squeezeComponent.pressed) {
+        //                     console.log('squeezeComponent');
+        //                 } else {
+        //                     console.log('squeezeComponent');
+        //                 }
+        //             });
+        //             let thumbstickComponent = motionController.getComponent(xr_ids[2]);//xr-standard-thumbstick
+        //             thumbstickComponent.onButtonStateChangedObservable.add(() => {
+        //                 if (thumbstickComponent.pressed) {
+        //                     console.log('thumbstickComponent');
+        //                 } else {
+        //                     console.log('thumbstickComponent');
+        //                 }
 
-                    });
+        //             });
 
-                    let abuttonComponent = motionController.getComponent(xr_ids[3]);//a-button
-                    abuttonComponent.onButtonStateChangedObservable.add(() => {
-                        if (abuttonComponent.pressed) {
-                            console.log('x');
-                        } else {
-                            console.log('x');
-                        }
-                    });
-                    let bbuttonComponent = motionController.getComponent(xr_ids[4]);//b-button
-                    bbuttonComponent.onButtonStateChangedObservable.add(() => {
-                        if (bbuttonComponent.pressed) {
-                            console.log('x');
+        //             let abuttonComponent = motionController.getComponent(xr_ids[3]);//a-button
+        //             abuttonComponent.onButtonStateChangedObservable.add(() => {
+        //                 if (abuttonComponent.pressed) {
+        //                     console.log('abuttonComponent');
+        //                 } else {
+        //                     console.log('abuttonComponent');
+        //                 }
+        //             });
+        //             let bbuttonComponent = motionController.getComponent(xr_ids[4]);//b-button
+        //             bbuttonComponent.onButtonStateChangedObservable.add(() => {
+        //                 if (bbuttonComponent.pressed) {
+        //                     console.log('bbuttonComponent');
 
-                        } else {
-                            console.log('x');
-                        }
-                    });
-                }
-
-            })
-
-        });
+        //                 } else {
+        //                     console.log('bbuttonComponent');
+        //                 }
+        //             });
+        //         }
+        //     })
+        // });
         //roteate lamp
         //@ts-ignore
         const lamp = m[0]._children[10];
