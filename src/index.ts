@@ -1,6 +1,6 @@
 // import { CreateSceneClass } from "../createScene";
 import {
-    Engine, Scene, FreeCamera, Vector3, HemisphericLight, Mesh, MeshBuilder, SceneLoader, StandardMaterial, Color3, ActionManager,
+    Engine, Scene, FreeCamera, Vector3, HemisphericLight, Mesh, MeshBuilder, WebXRCamera, SceneLoader, StandardMaterial, Color3, ActionManager,
     ExecuteCodeAction
 } from "@babylonjs/core";
 import {
@@ -11,6 +11,12 @@ import {
 } from '@babylonjs/gui'
 
 import "@babylonjs/loaders/glTF/2.0/glTFLoader";
+
+function setupCameraForCollisions(camera: any) {
+    camera.checkCollisions = true;
+    camera.applyGravity = true;
+    camera.ellipsoid = new Vector3(1.5, 3, 1.5);
+}
 
 // Basic setup
 const canvas = document.querySelector("#renderCanvas");
@@ -23,6 +29,7 @@ camera.speed = 0.7
 
 camera.attachControl(canvas, true);
 camera.inputs.addMouseWheel();
+setupCameraForCollisions(camera);
 
 // camera.setTarget(Zero());
 
@@ -46,9 +53,9 @@ ground.rotation = new Vector3(Math.PI / 2, 0, 0);
 scene.gravity = new Vector3(0, -9.81, 0);
 scene.collisionsEnabled = true;
 
-camera.checkCollisions = true;
-camera.applyGravity = true;
-camera.ellipsoid = new Vector3(1.5, 3, 1.5);
+// camera.checkCollisions = true;
+// camera.applyGravity = true;
+// camera.ellipsoid = new Vector3(1.5, 3, 1.5);
 
 ground.checkCollisions = true;
 
@@ -64,8 +71,11 @@ const xr = await scene.createDefaultXRExperienceAsync({
     // floorMeshes: [env.ground]
     //    xrInput: defaultXRExperience.input,
     //@ts-ignore   
-    // floorMeshes: [env.ground] /* Array of meshes to be used as landing points */
+    floorMeshes: [env.ground] /* Array of meshes to be used as landing points */
 });
+// const xrCamera = new WebXRCamera("nameOfCamera", scene, xrSessionManager);
+
+setupCameraForCollisions(xr.input.xrCamera);
 
 const roomModel = SceneLoader.ImportMesh(
     "",
@@ -100,6 +110,8 @@ const roomModel = SceneLoader.ImportMesh(
         const labelModel = new TextBlock();
         const targetModel = new Ellipse();
         const lineModel = new Line();
+        let actualModelClick: any
+        //do for cyklu staci poslat funkciu a vrati premennu nemusi byt vsetko vo for
         for (let i = 0; i < roomFullData.length; i++) {
             roomFullData[i].actionManager = new ActionManager(scene);
             //@ts-ignore
@@ -144,24 +156,36 @@ const roomModel = SceneLoader.ImportMesh(
             if (roomFullData[i].name === 'windowGlass') {
                 roomFullData[i].checkCollisions = true;
             }
+            //@ts-ignore
+            //on hold ?
+            roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPointerOverTrigger, function () {
+                // roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
+                console.log(roomFullData[i].name);
+                actualModelClick = roomFullData[i]
+                console.log(roomFullData[i]);
+            }));
         }
 
-        
+
         // //controller input
         xr.input.onControllerAddedObservable.add((controller) => {
-            console.log(xr.input,'xr.input'); 
+            console.log(xr.input, 'xr.input');
             controller.onMotionControllerInitObservable.add((motionController) => {
-                console.log(motionController,'motionController'); 
-                console.log(controller,'controller'); 
-                                  
+                console.log(motionController, 'motionController');
+                console.log(controller, 'controller');
+
                 if (motionController.handness === 'right') {
                     const xr_ids = motionController.getComponentIds();
-                    console.log(xr_ids,'xr_ids'); 
-                    console.log(xr_ids,'xr_ids'); 
+                    console.log(xr_ids, 'xr_ids');
+                    console.log(xr_ids, 'xr_ids');
                     let triggerComponent = motionController.getComponent(xr_ids[0]);//xr-standard-trigger
                     triggerComponent.onButtonStateChangedObservable.add(() => {
                         if (triggerComponent.pressed) {
                             // for (let i = 0; i < roomFullData.length; i++) {
+                            
+                        } else {
+                            console.log(actualModelClick);
+                            console.log('off');
                             modelTexture.idealWidth = 600;
                             textSquare.width = 0.14;
                             textSquare.height = "20px";
@@ -171,12 +195,14 @@ const roomModel = SceneLoader.ImportMesh(
                             textSquare.background = "green";
                             modelTexture.addControl(textSquare);
                             //@ts-ignore
-                            textSquare.linkWithMesh(roomFullData[40]);
+                            textSquare.linkWithMesh(actualModelClick);
                             // textSquare.linkWithMesh(roomFullData[i]);
                             textSquare.linkOffsetY = -50;
 
                             //@ts-ignore
-                            labelModel.text = roomFullData[40].name;
+                            if (actualModelClick) {
+                                labelModel.text = actualModelClick.name;
+                            }
                             // labelModel.text = roomFullData[i].name;
                             textSquare.addControl(labelModel);
 
@@ -187,7 +213,7 @@ const roomModel = SceneLoader.ImportMesh(
                             targetModel.background = "green";
                             modelTexture.addControl(targetModel);
                             //@ts-ignore
-                            targetModel.linkWithMesh(roomFullData[40]);
+                            targetModel.linkWithMesh(actualModelClick);
                             // targetModel.linkWithMesh(roomFullData[i]);
 
                             lineModel.lineWidth = 4;
@@ -196,11 +222,9 @@ const roomModel = SceneLoader.ImportMesh(
                             lineModel.linkOffsetY = -3;
                             modelTexture.addControl(lineModel);
                             //@ts-ignore
-                            lineModel.linkWithMesh(roomFullData[40]);
+                            lineModel.linkWithMesh(actualModelClick);
                             // lineModel.linkWithMesh(roomFullData[i]);
                             lineModel.connectedControl = textSquare;
-                        } else {
-                            console.log('triggerComponent off');
                         }
                     });
                     let squeezeComponent = motionController.getComponent(xr_ids[1]);//xr-standard-squeeze
