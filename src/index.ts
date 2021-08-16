@@ -126,11 +126,9 @@ const roomModel = SceneLoader.ImportMesh(
                 textSquare.thickness = 4;
                 textSquare.background = "green";
                 modelTexture.addControl(textSquare);
-                //@ts-ignore
                 textSquare.linkWithMesh(roomFullData[i]);
                 textSquare.linkOffsetY = -50;
 
-                //@ts-ignore
                 labelModel.text = roomFullData[i].name;
                 textSquare.addControl(labelModel);
 
@@ -140,7 +138,6 @@ const roomModel = SceneLoader.ImportMesh(
                 targetModel.thickness = 2;
                 targetModel.background = "green";
                 modelTexture.addControl(targetModel);
-                //@ts-ignore
                 targetModel.linkWithMesh(roomFullData[i]);
 
                 lineModel.lineWidth = 4;
@@ -148,7 +145,6 @@ const roomModel = SceneLoader.ImportMesh(
                 lineModel.y2 = 10;
                 lineModel.linkOffsetY = -3;
                 modelTexture.addControl(lineModel);
-                //@ts-ignore
                 lineModel.linkWithMesh(roomFullData[i]);
                 lineModel.connectedControl = textSquare;
             }));
@@ -156,8 +152,8 @@ const roomModel = SceneLoader.ImportMesh(
             if (roomFullData[i].name === 'windowGlass') {
                 roomFullData[i].checkCollisions = true;
             }
-            //@ts-ignore
             //on hold ?
+            //@ts-ignore
             roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPointerOverTrigger, function () {
                 // roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
                 console.log(roomFullData[i].name);
@@ -165,7 +161,6 @@ const roomModel = SceneLoader.ImportMesh(
                 console.log(roomFullData[i]);
             }));
         }
-
 
         // //controller input
         xr.input.onControllerAddedObservable.add((controller) => {
@@ -182,7 +177,7 @@ const roomModel = SceneLoader.ImportMesh(
                     triggerComponent.onButtonStateChangedObservable.add(() => {
                         if (triggerComponent.pressed) {
                             // for (let i = 0; i < roomFullData.length; i++) {
-                            
+
                         } else {
                             console.log(actualModelClick);
                             console.log('off');
@@ -194,12 +189,10 @@ const roomModel = SceneLoader.ImportMesh(
                             textSquare.thickness = 4;
                             textSquare.background = "green";
                             modelTexture.addControl(textSquare);
-                            //@ts-ignore
                             textSquare.linkWithMesh(actualModelClick);
                             // textSquare.linkWithMesh(roomFullData[i]);
                             textSquare.linkOffsetY = -50;
 
-                            //@ts-ignore
                             if (actualModelClick) {
                                 labelModel.text = actualModelClick.name;
                             }
@@ -212,7 +205,6 @@ const roomModel = SceneLoader.ImportMesh(
                             targetModel.thickness = 2;
                             targetModel.background = "green";
                             modelTexture.addControl(targetModel);
-                            //@ts-ignore
                             targetModel.linkWithMesh(actualModelClick);
                             // targetModel.linkWithMesh(roomFullData[i]);
 
@@ -221,7 +213,6 @@ const roomModel = SceneLoader.ImportMesh(
                             lineModel.y2 = 10;
                             lineModel.linkOffsetY = -3;
                             modelTexture.addControl(lineModel);
-                            //@ts-ignore
                             lineModel.linkWithMesh(actualModelClick);
                             // lineModel.linkWithMesh(roomFullData[i]);
                             lineModel.connectedControl = textSquare;
