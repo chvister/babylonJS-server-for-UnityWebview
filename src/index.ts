@@ -1,7 +1,6 @@
 import {
     Engine,
     Scene,
-    FreeCamera,
     Vector3,
     HemisphericLight,
     Mesh,
@@ -19,30 +18,22 @@ import {
     Line
 } from '@babylonjs/gui'
 
+import {cameraSettings, setupCameraForCollisions} from "./components/cameraSettings"
+
 import "@babylonjs/loaders/glTF/2.0/glTFLoader";
 
 const canvas = document.querySelector("#renderCanvas") as HTMLCanvasElement;
 const engine = new Engine(canvas, true, undefined, true);
 const scene = new Scene(engine);
 
-function setupCameraForCollisions(camera: FreeCamera) {
-    camera.checkCollisions = true;
-    camera.applyGravity = true;
-    camera.ellipsoid = new Vector3(1.5, 3, 1.5);
-}
-
-const camera = new FreeCamera("FreeCamera", new Vector3(0, 5, -5), scene);
-camera.speed = 0.7
-
-camera.attachControl(canvas, true);
-camera.inputs.addMouseWheel();
-setupCameraForCollisions(camera);
-
-scene?.activeCamera?.attachControl(canvas, true);
+cameraSettings(scene, canvas)
 
 const light = new HemisphericLight("light", new Vector3(0, 1, 0), scene);
 light.intensity = 0.7;
 
+const box = MeshBuilder.CreateBox("box", { height: 1, width: 1, depth: 1 }, scene)
+
+//Ground
 const ground = Mesh.CreatePlane("ground", 200.0, scene);
 const material = new StandardMaterial("groundMat", scene)
 ground.material = material
