@@ -1,13 +1,7 @@
 import {
     Engine,
     Scene,
-    Vector3,
-    HemisphericLight,
-    Mesh,
-    MeshBuilder,
     SceneLoader,
-    StandardMaterial,
-    Color3,
     ActionManager,
     ExecuteCodeAction
 } from "@babylonjs/core";
@@ -18,7 +12,9 @@ import {
     Line
 } from '@babylonjs/gui'
 
-import {cameraSettings, setupCameraForCollisions} from "./components/cameraSettings"
+import { cameraSettings, setupCameraForCollisions } from "./sceneSettings/camera"
+import { groundSettings } from "./sceneSettings/ground"
+import { lightSettings } from "./sceneSettings/light"
 
 import "@babylonjs/loaders/glTF/2.0/glTFLoader";
 
@@ -27,24 +23,8 @@ const engine = new Engine(canvas, true, undefined, true);
 const scene = new Scene(engine);
 
 cameraSettings(scene, canvas)
-
-const light = new HemisphericLight("light", new Vector3(0, 1, 0), scene);
-light.intensity = 0.7;
-
-const box = MeshBuilder.CreateBox("box", { height: 1, width: 1, depth: 1 }, scene)
-
-//Ground
-const ground = Mesh.CreatePlane("ground", 200.0, scene);
-const material = new StandardMaterial("groundMat", scene)
-ground.material = material
-material.diffuseColor = new Color3(1, 1, 1);
-material.backFaceCulling = false;
-ground.position = new Vector3(0, 0, 0);
-ground.rotation = new Vector3(Math.PI / 2, 0, 0);
-ground.checkCollisions = true;
-
-scene.gravity = new Vector3(0, -9.81, 0);
-scene.collisionsEnabled = true;
+lightSettings(scene)
+groundSettings(scene)
 
 window.addEventListener("resize", () => engine.resize());
 engine.runRenderLoop(() => scene.render());
