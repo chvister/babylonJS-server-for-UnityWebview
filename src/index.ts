@@ -19,9 +19,8 @@ function setupCameraForCollisions(camera: any) {
 }
 
 // Basic setup
-const canvas = document.querySelector("#renderCanvas");
-//@ts-ignore
-const engine = new Engine(canvas, true, null, true);
+const canvas = document.querySelector("#renderCanvas") as HTMLCanvasElement;
+const engine = new Engine(canvas, true, undefined, true);
 const scene = new Scene(engine);
 
 const camera = new FreeCamera("FreeCamera", new Vector3(0, 5, -5), scene);
@@ -33,8 +32,7 @@ setupCameraForCollisions(camera);
 
 // camera.setTarget(Zero());
 
-//@ts-ignore
-scene.activeCamera.attachControl(canvas, true);
+scene?.activeCamera?.attachControl(canvas, true);
 
 const light = new HemisphericLight("light", new Vector3(0, 1, 0), scene);
 light.intensity = 0.7;
@@ -43,10 +41,10 @@ const box = MeshBuilder.CreateBox("box", { height: 1, width: 1, depth: 1 }, scen
 
 // //Ground
 const ground = Mesh.CreatePlane("ground", 200.0, scene);
-ground.material = new StandardMaterial("groundMat", scene);
-//@ts-ignore
-ground.material.diffuseColor = new Color3(1, 1, 1);
-ground.material.backFaceCulling = false;
+const material = new StandardMaterial("groundMat", scene)
+ground.material = material
+material.diffuseColor = new Color3(1, 1, 1);
+material.backFaceCulling = false;
 ground.position = new Vector3(0, 0, 0);
 ground.rotation = new Vector3(Math.PI / 2, 0, 0);
 
@@ -67,15 +65,15 @@ const env = scene.createDefaultEnvironment();
 
 //@ts-ignore
 const xr = await scene.createDefaultXRExperienceAsync({
-    //@ts-ignore
     // floorMeshes: [env.ground]
     //    xrInput: defaultXRExperience.input,
     //@ts-ignore   
-    floorMeshes: [env.ground] /* Array of meshes to be used as landing points */
+    floorMeshes: [env?.ground] /* Array of meshes to be used as landing points */
 });
+
 // const xrCamera = new WebXRCamera("nameOfCamera", scene, xrSessionManager);
 
-setupCameraForCollisions(xr.input.xrCamera);
+// setupCameraForCollisions(xr.input.xrCamera);
 
 const roomModel = SceneLoader.ImportMesh(
     "",
@@ -84,26 +82,8 @@ const roomModel = SceneLoader.ImportMesh(
     scene,
     function (m) {
         console.log(m);
-        //@ts-ignore
-        console.log(m[0]._children[8], 'm[0]._children[tv]');
-        //@ts-ignore
-        console.log(m[0]._children[10], 'm[0]._children[lamp]');
-        //@ts-ignore
-        const roomData = m[0]._children
-        console.log(roomData, 'roomData');
-        for (let i = 0; i < roomData.length; i++) {
-            //click on mesh
-            roomData[i].actionManager = new ActionManager(scene);
-            roomData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPointerOverTrigger, function () {
-                // alert(roomData[i].name);
-                console.log(roomData[i].name);
-            }));
-            //avoid collision
-            if (roomData[i].name === 'featureWall' || roomData[i].name === 'Walls') {
-                roomData[i].checkCollisions = true;
-            }
-        }
-        //more datas
+        console.log(m,'m'); 
+
         const roomFullData = m
         const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
         const textSquare = new Rectangle();
@@ -113,9 +93,10 @@ const roomModel = SceneLoader.ImportMesh(
         let actualModelClick: any
         //do for cyklu staci poslat funkciu a vrati premennu nemusi byt vsetko vo for
         for (let i = 0; i < roomFullData.length; i++) {
+            console.log(roomFullData[i].name + i);
+
             roomFullData[i].actionManager = new ActionManager(scene);
-            //@ts-ignore
-            roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnDoublePickTrigger, function () {
+            roomFullData[i]?.actionManager?.registerAction(new ExecuteCodeAction(ActionManager.OnDoublePickTrigger, function () {
                 // roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
                 console.log(roomFullData[i].name);
                 modelTexture.idealWidth = 600;
@@ -149,12 +130,11 @@ const roomModel = SceneLoader.ImportMesh(
                 lineModel.connectedControl = textSquare;
             }));
 
-            if (roomFullData[i].name === 'windowGlass') {
+            if (roomFullData[i].name === 'windowGlass' || roomFullData[i].name === 'featureWall' || roomFullData[i].name === 'Walls') {
                 roomFullData[i].checkCollisions = true;
             }
             //on hold ?
-            //@ts-ignore
-            roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPointerOverTrigger, function () {
+            roomFullData[i]?.actionManager?.registerAction(new ExecuteCodeAction(ActionManager.OnPointerOverTrigger, function () {
                 // roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
                 console.log(roomFullData[i].name);
                 actualModelClick = roomFullData[i]
@@ -162,7 +142,7 @@ const roomModel = SceneLoader.ImportMesh(
             }));
         }
 
-        // //controller input
+        //controller input
         xr.input.onControllerAddedObservable.add((controller) => {
             console.log(xr.input, 'xr.input');
             controller.onMotionControllerInitObservable.add((motionController) => {
@@ -190,13 +170,11 @@ const roomModel = SceneLoader.ImportMesh(
                             textSquare.background = "green";
                             modelTexture.addControl(textSquare);
                             textSquare.linkWithMesh(actualModelClick);
-                            // textSquare.linkWithMesh(roomFullData[i]);
                             textSquare.linkOffsetY = -50;
 
                             if (actualModelClick) {
                                 labelModel.text = actualModelClick.name;
                             }
-                            // labelModel.text = roomFullData[i].name;
                             textSquare.addControl(labelModel);
 
                             targetModel.width = "7px";
@@ -206,7 +184,6 @@ const roomModel = SceneLoader.ImportMesh(
                             targetModel.background = "green";
                             modelTexture.addControl(targetModel);
                             targetModel.linkWithMesh(actualModelClick);
-                            // targetModel.linkWithMesh(roomFullData[i]);
 
                             lineModel.lineWidth = 4;
                             lineModel.color = "Orange";
@@ -214,7 +191,6 @@ const roomModel = SceneLoader.ImportMesh(
                             lineModel.linkOffsetY = -3;
                             modelTexture.addControl(lineModel);
                             lineModel.linkWithMesh(actualModelClick);
-                            // lineModel.linkWithMesh(roomFullData[i]);
                             lineModel.connectedControl = textSquare;
                         }
                     });
@@ -256,10 +232,9 @@ const roomModel = SceneLoader.ImportMesh(
                 }
             })
         });
-        //roteate lamp
-        //@ts-ignore
-        const lamp = m[0]._children[10];
-        lamp.rotationQuaternion = undefined;
+        //TODO remove rotate lamp
+        const lamp = m[38];
+        lamp.rotationQuaternion = null;
 
         scene.beforeRender = () => {
             lamp.rotation.y += 0.01;
