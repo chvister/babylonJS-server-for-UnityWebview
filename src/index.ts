@@ -1,10 +1,19 @@
-// import { CreateSceneClass } from "../createScene";
 import {
-    Engine, Scene, FreeCamera, Vector3, HemisphericLight, Mesh, MeshBuilder, WebXRCamera, SceneLoader, StandardMaterial, Color3, ActionManager,
+    Engine,
+    Scene,
+    FreeCamera,
+    Vector3,
+    HemisphericLight,
+    Mesh,
+    MeshBuilder,
+    SceneLoader,
+    StandardMaterial,
+    Color3,
+    ActionManager,
     ExecuteCodeAction
 } from "@babylonjs/core";
 import {
-    AdvancedDynamicTexture, Button, InputText, Rectangle,
+    AdvancedDynamicTexture, Rectangle,
     TextBlock,
     Ellipse,
     Line
@@ -12,16 +21,15 @@ import {
 
 import "@babylonjs/loaders/glTF/2.0/glTFLoader";
 
-function setupCameraForCollisions(camera: any) {
+const canvas = document.querySelector("#renderCanvas") as HTMLCanvasElement;
+const engine = new Engine(canvas, true, undefined, true);
+const scene = new Scene(engine);
+
+function setupCameraForCollisions(camera: FreeCamera) {
     camera.checkCollisions = true;
     camera.applyGravity = true;
     camera.ellipsoid = new Vector3(1.5, 3, 1.5);
 }
-
-// Basic setup
-const canvas = document.querySelector("#renderCanvas") as HTMLCanvasElement;
-const engine = new Engine(canvas, true, undefined, true);
-const scene = new Scene(engine);
 
 const camera = new FreeCamera("FreeCamera", new Vector3(0, 5, -5), scene);
 camera.speed = 0.7
@@ -30,16 +38,11 @@ camera.attachControl(canvas, true);
 camera.inputs.addMouseWheel();
 setupCameraForCollisions(camera);
 
-// camera.setTarget(Zero());
-
 scene?.activeCamera?.attachControl(canvas, true);
 
 const light = new HemisphericLight("light", new Vector3(0, 1, 0), scene);
 light.intensity = 0.7;
 
-const box = MeshBuilder.CreateBox("box", { height: 1, width: 1, depth: 1 }, scene)
-
-// //Ground
 const ground = Mesh.CreatePlane("ground", 200.0, scene);
 const material = new StandardMaterial("groundMat", scene)
 ground.material = material
@@ -47,15 +50,10 @@ material.diffuseColor = new Color3(1, 1, 1);
 material.backFaceCulling = false;
 ground.position = new Vector3(0, 0, 0);
 ground.rotation = new Vector3(Math.PI / 2, 0, 0);
+ground.checkCollisions = true;
 
 scene.gravity = new Vector3(0, -9.81, 0);
 scene.collisionsEnabled = true;
-
-// camera.checkCollisions = true;
-// camera.applyGravity = true;
-// camera.ellipsoid = new Vector3(1.5, 3, 1.5);
-
-ground.checkCollisions = true;
 
 window.addEventListener("resize", () => engine.resize());
 engine.runRenderLoop(() => scene.render());
@@ -63,17 +61,13 @@ engine.runRenderLoop(() => scene.render());
 //add xr
 const env = scene.createDefaultEnvironment();
 
-//@ts-ignore
+//@ts-ignore TODO
 const xr = await scene.createDefaultXRExperienceAsync({
-    // floorMeshes: [env.ground]
-    //    xrInput: defaultXRExperience.input,
-    //@ts-ignore   
-    floorMeshes: [env?.ground] /* Array of meshes to be used as landing points */
+    // xrInput: defaultXRExperience.input,  
+    // floorMeshes: [environment?.ground] /* Array of meshes to be used as landing points */
 });
 
-// const xrCamera = new WebXRCamera("nameOfCamera", scene, xrSessionManager);
-
-// setupCameraForCollisions(xr.input.xrCamera);
+setupCameraForCollisions(xr.input.xrCamera);
 
 const roomModel = SceneLoader.ImportMesh(
     "",
@@ -82,7 +76,7 @@ const roomModel = SceneLoader.ImportMesh(
     scene,
     function (m) {
         console.log(m);
-        console.log(m,'m'); 
+        console.log(m, 'm');
 
         const roomFullData = m
         const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
