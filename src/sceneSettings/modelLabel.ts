@@ -1,5 +1,9 @@
 import {
-    HemisphericLight, Scene, Vector3, AbstractMesh
+    Engine,
+    Scene,
+    SceneLoader,
+    ActionManager,
+    ExecuteCodeAction
 } from "@babylonjs/core";
 
 import {
@@ -10,7 +14,41 @@ import {
 } from '@babylonjs/gui'
 
 
-export const modelLabel = (model: AbstractMesh, modelTexture: AdvancedDynamicTexture, textSquare: Rectangle, labelModel: TextBlock, targetModel: Ellipse, lineModel: Line) => {
+// const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
+const textSquare = new Rectangle();
+const labelModel = new TextBlock();
+const targetModel = new Ellipse();
+const lineModel = new Line();
+
+export const modelLabelOnClick = (mesh: any, scene: any, modelTexture: any) => {
+    const roomFullData = mesh
+    let actualModelClick: any
+    //do for cyklu staci poslat funkciu a vrati premennu nemusi byt vsetko vo for
+
+    for (let i = 0; i < roomFullData.length; i++) {
+
+        roomFullData[i].actionManager = new ActionManager(scene);
+        roomFullData[i]?.actionManager?.registerAction(new ExecuteCodeAction(ActionManager.OnDoublePickTrigger, function () {
+            // roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
+            console.log(roomFullData[i].name);
+            modelLabel(roomFullData[i], modelTexture)
+            // modelLabel(roomFullData[i])
+        }));
+
+        if (roomFullData[i].name === 'windowGlass' || roomFullData[i].name === 'featureWall' || roomFullData[i].name === 'Walls') {
+            roomFullData[i].checkCollisions = true;
+        }
+        //on hold ?
+        roomFullData[i]?.actionManager?.registerAction(new ExecuteCodeAction(ActionManager.OnPointerOverTrigger, function () {
+            // roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
+            console.log(roomFullData[i].name);
+            actualModelClick = roomFullData[i]
+            console.log(roomFullData[i]);
+        }));
+    }
+}
+
+export const modelLabel = (model: any, modelTexture: any) => {
     console.log(model, 'model');
     modelTexture.idealWidth = 600;
     textSquare.width = 0.14;
