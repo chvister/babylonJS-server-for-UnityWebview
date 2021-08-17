@@ -13,11 +13,6 @@ import {
     Line
 } from '@babylonjs/gui'
 
-const textSquare = new Rectangle();
-const labelModel = new TextBlock();
-const targetModel = new Ellipse();
-const lineModel = new Line();
-
 export const modelLabelOnClick = (mesh: AbstractMesh[], scene: Scene, modelTexture: AdvancedDynamicTexture) => {
     const roomFullData = mesh
 
@@ -52,8 +47,19 @@ export const modelLabelOnClick = (mesh: AbstractMesh[], scene: Scene, modelTextu
 //     }
 // }
 
+const textSquare = new Rectangle();
+const labelModel = new TextBlock();
+const targetModel = new Ellipse();
+const lineModel = new Line();
+
 export const modelLabel = (model: AbstractMesh, modelTexture: AdvancedDynamicTexture) => {
     console.log(model, 'model');
+    labelTextSquare(model, modelTexture)
+    labelTargetModel(model, modelTexture)
+    labelLineModel(model, modelTexture)
+}
+
+const labelTextSquare = (model: AbstractMesh, modelTexture: AdvancedDynamicTexture) => {
     modelTexture.idealWidth = 600;
     textSquare.width = 0.14;
     textSquare.height = "20px";
@@ -68,7 +74,9 @@ export const modelLabel = (model: AbstractMesh, modelTexture: AdvancedDynamicTex
         labelModel.text = model?.name;
     }
     textSquare.addControl(labelModel);
+}
 
+const labelTargetModel = (model: AbstractMesh, modelTexture: AdvancedDynamicTexture) => {
     targetModel.width = "7px";
     targetModel.height = "7px";
     targetModel.color = "Orange";
@@ -76,7 +84,9 @@ export const modelLabel = (model: AbstractMesh, modelTexture: AdvancedDynamicTex
     targetModel.background = "green";
     modelTexture.addControl(targetModel);
     targetModel.linkWithMesh(model);
+}
 
+const labelLineModel = (model: AbstractMesh, modelTexture: AdvancedDynamicTexture) => {
     lineModel.lineWidth = 4;
     lineModel.color = "Orange";
     lineModel.y2 = 10;
@@ -100,7 +110,7 @@ export const modelLabelOnClickXr = (mesh: AbstractMesh[], scene: Scene, xr: WebX
                 let triggerComponent = motionController.getComponent(xr_ids[0]);//xr-standard-trigger
                 triggerComponent.onButtonStateChangedObservable.add(() => {
                     if (triggerComponent.pressed) {
-                        console.log('pressed'); 
+                        console.log('pressed');
                     } else {
                         for (let i = 0; i < roomFullData.length; i++) {
                             roomFullData[i].actionManager = new ActionManager(scene);
