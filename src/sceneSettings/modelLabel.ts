@@ -13,8 +13,6 @@ import {
     Line
 } from '@babylonjs/gui'
 
-
-// const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
 const textSquare = new Rectangle();
 const labelModel = new TextBlock();
 const targetModel = new Ellipse();
@@ -22,8 +20,6 @@ const lineModel = new Line();
 
 export const modelLabelOnClick = (mesh: any, scene: any, modelTexture: any) => {
     const roomFullData = mesh
-    let actualModelClick: any
-    //do for cyklu staci poslat funkciu a vrati premennu nemusi byt vsetko vo for
 
     for (let i = 0; i < roomFullData.length; i++) {
 
@@ -32,21 +28,31 @@ export const modelLabelOnClick = (mesh: any, scene: any, modelTexture: any) => {
             // roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
             console.log(roomFullData[i].name);
             modelLabel(roomFullData[i], modelTexture)
-            // modelLabel(roomFullData[i])
         }));
 
         if (roomFullData[i].name === 'windowGlass' || roomFullData[i].name === 'featureWall' || roomFullData[i].name === 'Walls') {
             roomFullData[i].checkCollisions = true;
         }
-        //on hold ?
-        roomFullData[i]?.actionManager?.registerAction(new ExecuteCodeAction(ActionManager.OnPointerOverTrigger, function () {
-            // roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
-            console.log(roomFullData[i].name);
-            actualModelClick = roomFullData[i]
-            console.log(roomFullData[i]);
-        }));
     }
 }
+
+// export const roomData = (mesh: any, scene: any) => {
+//     const roomFullData = mesh
+//     const actualModel = { model: undefined }
+//     for (let i = 0; i < roomFullData.length; i++) {
+//         roomFullData[i].actionManager = new ActionManager(scene);
+//         roomFullData[i]?.actionManager?.registerAction(new ExecuteCodeAction(ActionManager.OnPointerOverTrigger, function () {
+//             // roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
+//             console.log(roomFullData[i].name);
+//             // actualModelClick = roomFullData[i]
+//             // console.log(roomFullData[i]);
+//             // return roomFullData[i]
+//             // return "a"
+//             actualModel.model = roomFullData[i]
+//         }));
+//         return actualModel.model
+//     }
+// }
 
 export const modelLabel = (model: any, modelTexture: any) => {
     console.log(model, 'model');
@@ -60,8 +66,9 @@ export const modelLabel = (model: any, modelTexture: any) => {
     modelTexture.addControl(textSquare);
     textSquare.linkWithMesh(model);
     textSquare.linkOffsetY = -50;
-
-    labelModel.text = model.name;
+    if (model) {
+        labelModel.text = model?.name;
+    }
     textSquare.addControl(labelModel);
 
     targetModel.width = "7px";
@@ -79,4 +86,73 @@ export const modelLabel = (model: any, modelTexture: any) => {
     modelTexture.addControl(lineModel);
     lineModel.linkWithMesh(model);
     lineModel.connectedControl = textSquare;
+}
+
+export const modelLabelOnClickXr = (mesh: any, scene: any, xr: any, modelTexture: any) => {
+    const roomFullData = mesh
+    const actualModeldata = { model: null }
+    xr.input.onControllerAddedObservable.add((controller: any) => {
+        for (let i = 0; i < roomFullData.length; i++) {
+            roomFullData[i].actionManager = new ActionManager(scene);
+            roomFullData[i]?.actionManager?.registerAction(new ExecuteCodeAction(ActionManager.OnPointerOverTrigger, function () {
+                // roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
+                console.log(roomFullData[i].name);
+                actualModeldata.model = roomFullData[i]
+            }));
+        }
+        console.log(xr.input, 'xr.input');
+        controller.onMotionControllerInitObservable.add((motionController: any) => {
+            console.log(motionController, 'motionController');
+            console.log(controller, 'controller');
+
+            if (motionController.handness === 'right') {
+                const xr_ids = motionController.getComponentIds();
+                console.log(xr_ids, 'xr_ids');
+                console.log(xr_ids, 'xr_ids');
+                let triggerComponent = motionController.getComponent(xr_ids[0]);//xr-standard-trigger
+                triggerComponent.onButtonStateChangedObservable.add(() => {
+                    if (triggerComponent.pressed) {
+
+                    } else {
+                        modelLabel(actualModeldata.model, modelTexture)
+                    }
+                });
+                let squeezeComponent = motionController.getComponent(xr_ids[1]);//xr-standard-squeeze
+                squeezeComponent.onButtonStateChangedObservable.add(() => {
+                    if (squeezeComponent.pressed) {
+                        console.log('squeezeComponent');
+                    } else {
+                        console.log('squeezeComponent');
+                    }
+                });
+                let thumbstickComponent = motionController.getComponent(xr_ids[2]);//xr-standard-thumbstick
+                thumbstickComponent.onButtonStateChangedObservable.add(() => {
+                    if (thumbstickComponent.pressed) {
+                        console.log('thumbstickComponent');
+                    } else {
+                        console.log('thumbstickComponent');
+                    }
+
+                });
+
+                let abuttonComponent = motionController.getComponent(xr_ids[3]);//a-button
+                abuttonComponent.onButtonStateChangedObservable.add(() => {
+                    if (abuttonComponent.pressed) {
+                        console.log('abuttonComponent');
+                    } else {
+                        console.log('abuttonComponent');
+                    }
+                });
+                let bbuttonComponent = motionController.getComponent(xr_ids[4]);//b-button
+                bbuttonComponent.onButtonStateChangedObservable.add(() => {
+                    if (bbuttonComponent.pressed) {
+                        console.log('bbuttonComponent');
+
+                    } else {
+                        console.log('bbuttonComponent');
+                    }
+                });
+            }
+        })
+    });
 }
