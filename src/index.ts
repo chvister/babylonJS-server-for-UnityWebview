@@ -1,15 +1,10 @@
 import {
     Engine,
     Scene,
-    SceneLoader,
-    ActionManager,
-    ExecuteCodeAction
+    SceneLoader
 } from "@babylonjs/core";
 import {
-    AdvancedDynamicTexture, Rectangle,
-    TextBlock,
-    Ellipse,
-    Line
+    AdvancedDynamicTexture
 } from '@babylonjs/gui'
 
 import { cameraSettings, setupCameraForCollisions } from "./sceneSettings/camera"

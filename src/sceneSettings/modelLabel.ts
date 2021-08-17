@@ -1,9 +1,9 @@
 import {
-    Engine,
     Scene,
-    SceneLoader,
+    AbstractMesh,
     ActionManager,
-    ExecuteCodeAction
+    ExecuteCodeAction,
+    WebXRDefaultExperience
 } from "@babylonjs/core";
 
 import {
@@ -18,14 +18,12 @@ const labelModel = new TextBlock();
 const targetModel = new Ellipse();
 const lineModel = new Line();
 
-export const modelLabelOnClick = (mesh: any, scene: any, modelTexture: any) => {
+export const modelLabelOnClick = (mesh: AbstractMesh[], scene: Scene, modelTexture: AdvancedDynamicTexture) => {
     const roomFullData = mesh
 
     for (let i = 0; i < roomFullData.length; i++) {
-
         roomFullData[i].actionManager = new ActionManager(scene);
         roomFullData[i]?.actionManager?.registerAction(new ExecuteCodeAction(ActionManager.OnDoublePickTrigger, function () {
-            // roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
             console.log(roomFullData[i].name);
             modelLabel(roomFullData[i], modelTexture)
         }));
@@ -54,7 +52,7 @@ export const modelLabelOnClick = (mesh: any, scene: any, modelTexture: any) => {
 //     }
 // }
 
-export const modelLabel = (model: any, modelTexture: any) => {
+export const modelLabel = (model: AbstractMesh, modelTexture: AdvancedDynamicTexture) => {
     console.log(model, 'model');
     modelTexture.idealWidth = 600;
     textSquare.width = 0.14;
@@ -88,33 +86,29 @@ export const modelLabel = (model: any, modelTexture: any) => {
     lineModel.connectedControl = textSquare;
 }
 
-export const modelLabelOnClickXr = (mesh: any, scene: any, xr: any, modelTexture: any) => {
+export const modelLabelOnClickXr = (mesh: AbstractMesh[], scene: Scene, xr: WebXRDefaultExperience, modelTexture: AdvancedDynamicTexture) => {
     const roomFullData = mesh
-    const actualModeldata = { model: null }
-    xr.input.onControllerAddedObservable.add((controller: any) => {
-        for (let i = 0; i < roomFullData.length; i++) {
-            roomFullData[i].actionManager = new ActionManager(scene);
-            roomFullData[i]?.actionManager?.registerAction(new ExecuteCodeAction(ActionManager.OnPointerOverTrigger, function () {
-                // roomFullData[i].actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
-                console.log(roomFullData[i].name);
-                actualModeldata.model = roomFullData[i]
-            }));
-        }
+    xr.input.onControllerAddedObservable.add((controller) => {
         console.log(xr.input, 'xr.input');
-        controller.onMotionControllerInitObservable.add((motionController: any) => {
+        controller.onMotionControllerInitObservable.add((motionController) => {
             console.log(motionController, 'motionController');
             console.log(controller, 'controller');
 
             if (motionController.handness === 'right') {
                 const xr_ids = motionController.getComponentIds();
                 console.log(xr_ids, 'xr_ids');
-                console.log(xr_ids, 'xr_ids');
                 let triggerComponent = motionController.getComponent(xr_ids[0]);//xr-standard-trigger
                 triggerComponent.onButtonStateChangedObservable.add(() => {
                     if (triggerComponent.pressed) {
-
+                        console.log('pressed'); 
                     } else {
-                        modelLabel(actualModeldata.model, modelTexture)
+                        for (let i = 0; i < roomFullData.length; i++) {
+                            roomFullData[i].actionManager = new ActionManager(scene);
+                            roomFullData[i]?.actionManager?.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
+                                console.log(roomFullData[i].name);
+                                modelLabel(roomFullData[i], modelTexture)
+                            }));
+                        }
                     }
                 });
                 let squeezeComponent = motionController.getComponent(xr_ids[1]);//xr-standard-squeeze
