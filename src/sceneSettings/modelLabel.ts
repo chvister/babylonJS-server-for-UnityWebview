@@ -1,39 +1,43 @@
 import {
-    Scene,
     AbstractMesh,
     ActionManager,
     ExecuteCodeAction,
+    Scene,
     WebXRDefaultExperience
 } from "@babylonjs/core"
 
 import {
-    AdvancedDynamicTexture, Rectangle,
-    TextBlock,
+    AdvancedDynamicTexture, 
     Ellipse,
-    Line
+    Line,
+    Rectangle,
+    TextBlock
 } from '@babylonjs/gui'
 
-export const modelLabelOnClick = (mesh: AbstractMesh[], scene: Scene, modelTexture: AdvancedDynamicTexture) => {
-    const roomFullData = mesh
-    for (let i = 0; i < roomFullData.length; i++) {
-        roomFullData[i].actionManager = new ActionManager(scene)
-        roomFullData[i]?.actionManager?.registerAction(new ExecuteCodeAction(ActionManager.OnDoublePickTrigger, function () {
-            console.log(roomFullData[i].name)
-            modelLabel(roomFullData[i], modelTexture)
+export const modelLabelOnClick = (roomMeshDatas: AbstractMesh[], scene: Scene, modelTexture: AdvancedDynamicTexture) => {
+    roomMeshDatas.forEach(roomMeshData => {
+        roomMeshData.actionManager = new ActionManager(scene)
+        roomMeshData?.actionManager?.registerAction(new ExecuteCodeAction(ActionManager.OnDoublePickTrigger, function () {
+            console.log(roomMeshData.name)
+            if (roomMeshData) {
+                modelLabel(roomMeshData, modelTexture)
+            }
         }))
+        avoidModelsCollisions(roomMeshData)
+    })
+}
 
-        avoidModelsCollisions(roomFullData[i])
+const collisionMeshes = () => {
+    return ['windowGlass', 'featureWall', 'Walls']
+}
+
+const avoidModelsCollisions = (model: AbstractMesh) => {
+    if (collisionMeshes().includes(model.name)) {
+        model.checkCollisions = true
     }
 }
 
-const avoidModelsCollisions = (mesh: AbstractMesh) => {
-    if (mesh.name === 'windowGlass' || mesh.name === 'featureWall' || mesh.name === 'Walls') {
-        mesh.checkCollisions = true
-    }
-}
-
-export const modelLabelOnClickXr = (mesh: AbstractMesh[], scene: Scene, xr: WebXRDefaultExperience, modelTexture: AdvancedDynamicTexture) => {
-    const roomFullData = mesh
+export const modelLabelOnClickXr = (roomMeshDatas: AbstractMesh[], scene: Scene, xr: WebXRDefaultExperience, modelTexture: AdvancedDynamicTexture) => {
     xr.input.onControllerAddedObservable.add((controller) => {
         console.log(xr.input, 'xr.input')
         controller.onMotionControllerInitObservable.add((motionController) => {
@@ -44,7 +48,9 @@ export const modelLabelOnClickXr = (mesh: AbstractMesh[], scene: Scene, xr: WebX
                     if (squeezeComponent.pressed) {
                         console.log('pressed')
                     } else {
-                        createModelLabel(roomFullData, scene, modelTexture)
+                        if (roomMeshDatas) {
+                            createModelLabel(roomMeshDatas, scene, modelTexture)
+                        }
                     }
                 })
                 //TODO other controller button events
@@ -88,16 +94,15 @@ export const modelLabelOnClickXr = (mesh: AbstractMesh[], scene: Scene, xr: WebX
     })
 }
 
-const createModelLabel = (roomFullData: any, scene:any, modelTexture: any) => {
-    for (let i = 0; i < roomFullData.length; i++) {
-        roomFullData[i].actionManager = new ActionManager(scene)
-        roomFullData[i]?.actionManager?.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
-            console.log(roomFullData[i].name)
-            modelLabel(roomFullData[i], modelTexture)
+const createModelLabel = (roomMeshDatas: AbstractMesh[], scene: Scene, modelTexture: AdvancedDynamicTexture) => {
+    roomMeshDatas.forEach(roomMeshData => {
+        roomMeshData.actionManager = new ActionManager(scene)
+        roomMeshData?.actionManager?.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
+            console.log(roomMeshData.name)
+            modelLabel(roomMeshData, modelTexture)
         }))
-    }
+    })
 }
-
 
 const modelLabel = (model: AbstractMesh, modelTexture: AdvancedDynamicTexture) => {
     console.log(model, 'model')
@@ -133,7 +138,9 @@ const labelTargetModel = (model: AbstractMesh, modelTexture: AdvancedDynamicText
     targetModel.thickness = 2
     targetModel.background = "green"
     modelTexture.addControl(targetModel)
-    targetModel.linkWithMesh(model)
+    if (model) {
+        targetModel.linkWithMesh(model)
+    }
 }
 
 const lineModel = new Line()
@@ -143,6 +150,8 @@ const labelLineModel = (model: AbstractMesh, modelTexture: AdvancedDynamicTextur
     lineModel.y2 = 10
     lineModel.linkOffsetY = -3
     modelTexture.addControl(lineModel)
-    lineModel.linkWithMesh(model)
+    if (model) {
+        lineModel.linkWithMesh(model)
+    }
     lineModel.connectedControl = textSquare
 }
