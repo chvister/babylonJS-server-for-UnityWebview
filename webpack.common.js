@@ -59,6 +59,7 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 { from: 'public/scene', to: 'scene' },
+                { from: 'public/css', to: 'css' },
             ],
         }),
         new HtmlWebpackPlugin({

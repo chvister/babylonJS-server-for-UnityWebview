@@ -14,7 +14,7 @@ import {
     TextBlock
 } from '@babylonjs/gui'
 
-export const modelLabelOnClick = (roomMeshDatas: AbstractMesh[], scene: Scene, modelTexture: AdvancedDynamicTexture) => {
+export const roomModelLabelOnClick = (roomMeshDatas: AbstractMesh[], scene: Scene, modelTexture: AdvancedDynamicTexture) => {
     roomMeshDatas.forEach(roomMeshData => {
         roomMeshData.actionManager = new ActionManager(scene)
         roomMeshData?.actionManager?.registerAction(new ExecuteCodeAction(ActionManager.OnDoublePickTrigger, function () {
@@ -37,7 +37,7 @@ const avoidModelsCollisions = (model: AbstractMesh) => {
     }
 }
 
-export const modelLabelOnClickXr = (roomMeshDatas: AbstractMesh[], scene: Scene, xr: WebXRDefaultExperience, modelTexture: AdvancedDynamicTexture) => {
+export const roomModelLabelOnClickXr = (roomMeshDatas: AbstractMesh[], scene: Scene, xr: WebXRDefaultExperience, modelTexture: AdvancedDynamicTexture) => {
     xr.input.onControllerAddedObservable.add((controller) => {
         console.log(xr.input, 'xr.input')
         controller.onMotionControllerInitObservable.add((motionController) => {
@@ -53,42 +53,6 @@ export const modelLabelOnClickXr = (roomMeshDatas: AbstractMesh[], scene: Scene,
                         }
                     }
                 })
-                //TODO other controller button events
-                // const squeezeComponent = motionController.getComponent(xr_ids[1])
-                // squeezeComponent.onButtonStateChangedObservable.add(() => {
-                //     if (squeezeComponent.pressed) {
-                //         console.log('squeezeComponent')
-                //     } else {
-                //         console.log('squeezeComponent')
-                //     }
-                // })
-                // const thumbstickComponent = motionController.getComponent(xr_ids[2])
-                // thumbstickComponent.onButtonStateChangedObservable.add(() => {
-                //     if (thumbstickComponent.pressed) {
-                //         console.log('thumbstickComponent')
-                //     } else {
-                //         console.log('thumbstickComponent')
-                //     }
-
-                // })
-
-                // const abuttonComponent = motionController.getComponent(xr_ids[3])
-                // abuttonComponent.onButtonStateChangedObservable.add(() => {
-                //     if (abuttonComponent.pressed) {
-                //         console.log('abuttonComponent')
-                //     } else {
-                //         console.log('abuttonComponent')
-                //     }
-                // })
-                // const bbuttonComponent = motionController.getComponent(xr_ids[4])
-                // bbuttonComponent.onButtonStateChangedObservable.add(() => {
-                //     if (bbuttonComponent.pressed) {
-                //         console.log('bbuttonComponent')
-
-                //     } else {
-                //         console.log('bbuttonComponent')
-                //     }
-                // })
             }
         })
     })

@@ -10,7 +10,7 @@ import {
 import { cameraSettings, setupCameraForCollisions } from "./sceneSettings/camera"
 import { groundSettings } from "./sceneSettings/ground"
 import { lightSettings } from "./sceneSettings/light"
-import { modelLabelOnClick, modelLabelOnClickXr } from "./sceneSettings/modelLabel"
+import { roomModelLabelOnClick, roomModelLabelOnClickXr } from "./sceneSettings/modelLabel"
 
 import "@babylonjs/loaders/glTF/2.0/glTFLoader"
 
@@ -25,8 +25,7 @@ groundSettings(scene)
 window.addEventListener("resize", () => engine.resize())
 engine.runRenderLoop(() => scene.render())
 
-//add xr
-const env = scene.createDefaultEnvironment()
+const environment = scene.createDefaultEnvironment()
 
 //@ts-ignore TODO
 const xr = await scene.createDefaultXRExperienceAsync({
@@ -44,14 +43,7 @@ const roomModel = SceneLoader.ImportMesh(
     function (mesh) {
         console.log(mesh, 'mesh')
         const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI")
-        modelLabelOnClick(mesh, scene, modelTexture)
-        modelLabelOnClickXr(mesh, scene, xr, modelTexture)
-  
-        //TODO remove rotate lamp
-        const lamp = mesh[38]
-        lamp.rotationQuaternion = null
-        scene.beforeRender = () => {
-            lamp.rotation.y += 0.01
-        }
+        roomModelLabelOnClick(mesh, scene, modelTexture)
+        roomModelLabelOnClickXr(mesh, scene, xr, modelTexture)
     }
 )
