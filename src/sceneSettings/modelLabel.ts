@@ -7,7 +7,7 @@ import {
 } from "@babylonjs/core"
 
 import {
-    AdvancedDynamicTexture, 
+    AdvancedDynamicTexture,
     Ellipse,
     Line,
     Rectangle,
@@ -15,12 +15,12 @@ import {
 } from '@babylonjs/gui'
 
 export const roomModelLabelOnClick = (roomMeshDatas: AbstractMesh[], scene: Scene, modelTexture: AdvancedDynamicTexture) => {
-    roomMeshDatas.forEach(roomMeshData => {
+    roomMeshDatas.forEach((roomMeshData, index) => {
         roomMeshData.actionManager = new ActionManager(scene)
         roomMeshData?.actionManager?.registerAction(new ExecuteCodeAction(ActionManager.OnDoublePickTrigger, function () {
             console.log(roomMeshData.name)
             if (roomMeshData) {
-                modelLabel(roomMeshData, modelTexture)
+                modelLabel(roomMeshData, index, modelTexture)
             }
         }))
         avoidModelsCollisions(roomMeshData)
@@ -59,27 +59,28 @@ export const roomModelLabelOnClickXr = (roomMeshDatas: AbstractMesh[], scene: Sc
 }
 
 const createModelLabel = (roomMeshDatas: AbstractMesh[], scene: Scene, modelTexture: AdvancedDynamicTexture) => {
-    roomMeshDatas.forEach(roomMeshData => {
+    // roomMeshDatas.forEach(roomMeshData => {
+    roomMeshDatas.forEach((roomMeshData, index) => {
         roomMeshData.actionManager = new ActionManager(scene)
         roomMeshData?.actionManager?.registerAction(new ExecuteCodeAction(ActionManager.OnPickUpTrigger, function () {
             console.log(roomMeshData.name)
-            modelLabel(roomMeshData, modelTexture)
+            modelLabel(roomMeshData, index, modelTexture)
         }))
     })
 }
 
-const modelLabel = (model: AbstractMesh, modelTexture: AdvancedDynamicTexture) => {
+const modelLabel = (model: AbstractMesh, index: number, modelTexture: AdvancedDynamicTexture) => {
     console.log(model, 'model')
-    labelTextSquare(model, modelTexture)
+    labelTextSquare(model, index, modelTexture)
     labelTargetModel(model, modelTexture)
     labelLineModel(model, modelTexture)
 }
 
 const textSquare = new Rectangle()
 const labelModel = new TextBlock()
-const labelTextSquare = (model: AbstractMesh, modelTexture: AdvancedDynamicTexture) => {
+const labelTextSquare = (model: AbstractMesh, index: number, modelTexture: AdvancedDynamicTexture) => {
     modelTexture.idealWidth = 600
-    textSquare.width = 0.14
+    textSquare.width = 0.17
     textSquare.height = "20px"
     textSquare.cornerRadius = 20
     textSquare.color = "Orange"
@@ -89,7 +90,7 @@ const labelTextSquare = (model: AbstractMesh, modelTexture: AdvancedDynamicTextu
     textSquare.linkWithMesh(model)
     textSquare.linkOffsetY = -50
     if (model) {
-        labelModel.text = model?.name
+        labelModel.text = model?.name + " " + index
     }
     textSquare.addControl(labelModel)
 }

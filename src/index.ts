@@ -11,6 +11,7 @@ import { cameraSettings, setupCameraForCollisions } from "./sceneSettings/camera
 import { groundSettings } from "./sceneSettings/ground"
 import { lightSettings } from "./sceneSettings/light"
 import { roomModelLabelOnClick, roomModelLabelOnClickXr } from "./sceneSettings/modelLabel"
+import { hideObjectByDistance } from "./sceneSettings/hideObjectByDistance"
 
 import "@babylonjs/loaders/glTF/2.0/glTFLoader"
 
@@ -45,5 +46,6 @@ const roomModel = SceneLoader.ImportMesh(
         const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI")
         roomModelLabelOnClick(mesh, scene, modelTexture)
         roomModelLabelOnClickXr(mesh, scene, xr, modelTexture)
+        hideObjectByDistance(mesh)
     }
 )
