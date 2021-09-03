@@ -1,7 +1,7 @@
 import {
     Engine,
     Scene,
-    SceneLoader, SimplificationType, FreeCamera, Vector3
+    SceneLoader, FreeCamera, Vector3
 } from "@babylonjs/core"
 import {
     AdvancedDynamicTexture
@@ -12,6 +12,7 @@ import { groundSettings } from "./sceneSettings/ground"
 import { lightSettings } from "./sceneSettings/light"
 import { roomModelLabelOnClick, roomModelLabelOnClickXr } from "./sceneSettings/modelLabel"
 import { hideObjectByDistance } from "./sceneSettings/hideObjectByDistance"
+import { simplifyObjectByDistance } from "./sceneSettings/simplifyObjectByDistance"
 
 import "@babylonjs/loaders/glTF/2.0/glTFLoader"
 
@@ -53,29 +54,23 @@ engine.runRenderLoop(() => scene.render())
 //         // hideObjectByDistance(mesh)
 //         //LOD simplyfy
 //         //@ts-ignore
-//         // mesh[40].optimizeIndices(function() {
-//         //     //@ts-ignore
-// 		// 	mesh[40].simplify([{distance:1, quality:0.9}, {distance:10, quality: 0.1}], false, SimplificationType.QUADRATIC, function() {
-// 		// 	console.log("simplification finished");
-// 		//  });
-// 		// })
+//         mesh[105].optimizeIndices(function() {
+//             //@ts-ignore
+// 			mesh[105].simplify([{distance:1, quality:0.9}, {distance:10, quality: 0.1}], false, SimplificationType.QUADRATIC, function() {
+// 			console.log("simplification finished");
+// 		 });
+// 		})
 //     }
 // )
 
 SceneLoader.Append("https://www.babylonjs.com/scenes/espilit/",
     "espilit.incremental.babylon", scene, function (mesh) {
-        console.log(mesh.meshes, 'mesh');
+        console.log(mesh.meshes, 'mesh meshes');
+        console.log(mesh, 'mesh');
         const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI")
         roomModelLabelOnClick(mesh.meshes, scene, modelTexture)
         //@ts-ignore
         scene.activeCamera.attachControl(canvas, true);
-        //LOD simplyfy
-        //@ts-ignore
-        mesh.meshes[27].optimizeIndices(function () {
-            //@ts-ignore
-            mesh.meshes[27].simplify([{ distance: 1, quality: 0.9 }, { distance: 10, quality: 0.1 }], false, SimplificationType.QUADRATIC, function () {
-                console.log("simplification finished");
-            });
-        });
+        simplifyObjectByDistance(mesh.meshes)
         hideObjectByDistance(mesh.meshes)
     });
