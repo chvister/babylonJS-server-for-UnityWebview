@@ -15,6 +15,9 @@ import { hideObjectByDistance } from "./sceneSettings/hideObjectByDistance"
 import { simplifyObjectByDistance } from "./sceneSettings/simplifyObjectByDistance"
 
 import "@babylonjs/loaders/glTF/2.0/glTFLoader"
+import '@babylonjs/loaders/glTF/2.0/Extensions/KHR_draco_mesh_compression';
+
+import "@babylonjs/loaders/glTF/2.0/glTFLoader"
 
 const canvas = document.querySelector("#renderCanvas") as HTMLCanvasElement
 const engine = new Engine(canvas, true, undefined, true)
@@ -73,4 +76,18 @@ SceneLoader.Append("https://www.babylonjs.com/scenes/espilit/",
         scene.activeCamera.attachControl(canvas, true);
         simplifyObjectByDistance(mesh.meshes)
         hideObjectByDistance(mesh.meshes)
+    });
+
+SceneLoader.Append("scene/",
+    "gladiatord.gltf", scene, function (mesh) {
+        console.log(mesh.meshes, 'mesh meshes');
+        const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI")
+        roomModelLabelOnClick(mesh.meshes, scene, modelTexture)
+        lightSettings(scene)
+        mesh.meshes.forEach((model:any, index:any) => {
+            if(index === 125 || index === 126){
+                //@ts-ignore TODO
+                model.addLODLevel(15, null)
+            }
+        })
     });
