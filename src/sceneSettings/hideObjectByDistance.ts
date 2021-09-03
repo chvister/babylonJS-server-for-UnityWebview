@@ -4,7 +4,7 @@ import {
 
 export const hideObjectByDistance = (mesh: AbstractMesh[]) => {
     mesh.forEach((model, index) => {
-        if(index > 20 && index < 30){
+        if(index === 105 || index === 66){
             //@ts-ignore TODO
             model.addLODLevel(15, null)
         }

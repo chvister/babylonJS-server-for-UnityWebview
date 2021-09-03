@@ -83,9 +83,9 @@ const labelTextSquare = (model: AbstractMesh, index: number, modelTexture: Advan
     textSquare.width = 0.17
     textSquare.height = "20px"
     textSquare.cornerRadius = 20
-    textSquare.color = "Orange"
+    textSquare.color = "black"
     textSquare.thickness = 4
-    textSquare.background = "green"
+    textSquare.background = "silver"
     modelTexture.addControl(textSquare)
     textSquare.linkWithMesh(model)
     textSquare.linkOffsetY = -50
@@ -99,9 +99,9 @@ const targetModel = new Ellipse()
 const labelTargetModel = (model: AbstractMesh, modelTexture: AdvancedDynamicTexture) => {
     targetModel.width = "7px"
     targetModel.height = "7px"
-    targetModel.color = "Orange"
+    targetModel.color = "black"
     targetModel.thickness = 2
-    targetModel.background = "green"
+    targetModel.background = "silver"
     modelTexture.addControl(targetModel)
     if (model) {
         targetModel.linkWithMesh(model)
@@ -111,7 +111,7 @@ const labelTargetModel = (model: AbstractMesh, modelTexture: AdvancedDynamicText
 const lineModel = new Line()
 const labelLineModel = (model: AbstractMesh, modelTexture: AdvancedDynamicTexture) => {
     lineModel.lineWidth = 4
-    lineModel.color = "Orange"
+    lineModel.color = "black"
     lineModel.y2 = 10
     lineModel.linkOffsetY = -3
     modelTexture.addControl(lineModel)
