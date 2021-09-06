@@ -78,4 +78,7 @@ SceneLoader.Append("scene/babylon-arena/",
         scene.activeCamera.attachControl(canvas, true);
         // simplifyObjectByDistance(mesh.meshes)
         // hideObjectByDistance(mesh.meshes)
+        // scene.debugLayer.show({
+        //     // embedMode: true,
+        //   });
     });
