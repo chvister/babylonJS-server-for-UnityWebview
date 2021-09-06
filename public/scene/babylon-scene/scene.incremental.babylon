@@ -75,7 +75,7 @@
             "ranges": []
         }
     ],
-    "activeCameraID": "default camera",
+    "activeCameraID": "free camera",
     "animations": [],
     "materials": [
         {

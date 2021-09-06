@@ -6,6 +6,7 @@
     "dependencies": {
         "@babylonjs/core": "^5.0.0-alpha.37",
         "@babylonjs/gui": "^5.0.0-alpha.37",
+        "@babylonjs/inspector": "^4.2.0",
         "@babylonjs/loaders": "^5.0.0-alpha.37",
         "ammo.js": "github:kripken/ammo.js",
         "copy-webpack-plugin": "^9.0.1"

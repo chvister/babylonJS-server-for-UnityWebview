@@ -6,6 +6,8 @@ import {
 import {
     AdvancedDynamicTexture
 } from '@babylonjs/gui'
+//TODO remove inspector
+import { Inspector } from "@babylonjs/inspector";
 
 import { cameraSettings, setupCameraForCollisions } from "./sceneSettings/camera"
 import { groundSettings } from "./sceneSettings/ground"
@@ -22,11 +24,13 @@ import "@babylonjs/loaders/glTF/2.0/glTFLoader"
 const canvas = document.querySelector("#renderCanvas") as HTMLCanvasElement
 const engine = new Engine(canvas, true, undefined, true)
 const scene = new Scene(engine)
-const camera = new FreeCamera("FreeCamera", new Vector3(1, -5, 1), scene);
+// const camera = new FreeCamera("FreeCamera", new Vector3(-11.961, 3.388, -9.275), scene);
+//TODO remove inspector
+new Inspector()
 
-// cameraSettings(scene, canvas)
-// lightSettings(scene)
-// groundSettings(scene)
+cameraSettings(scene, canvas)
+lightSettings(scene)
+groundSettings(scene)
 
 window.addEventListener("resize", () => engine.resize())
 engine.runRenderLoop(() => scene.render())
@@ -83,3 +87,5 @@ SceneLoader.Append("scene/babylon-scene/",
         //     // embedMode: true,
         //   });
     });
+//TODO remove inspector
+scene.debugLayer.show();
