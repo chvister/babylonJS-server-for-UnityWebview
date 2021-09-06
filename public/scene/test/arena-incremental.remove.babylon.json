@@ -1,0 +1,6263 @@
+{
+    "autoClear": true,
+    "clearColor": [
+        0.2,
+        0.2,
+        0.3,
+        1
+    ],
+    "ambientColor": [
+        0,
+        0,
+        0
+    ],
+    "gravity": [
+        0,
+        -9.807,
+        0
+    ],
+    "collisionsEnabled": true,
+    "morphTargetManagers": [],
+    "lights": [
+        {
+            "tags": null,
+            "shadowFrustumSize": 0,
+            "shadowOrthoScale": 0.1,
+            "autoUpdateExtends": true,
+            "autoCalcShadowZBounds": false,
+            "orthoLeft": 1.7976931348623157e+308,
+            "orthoRight": 5e-324,
+            "orthoTop": 5e-324,
+            "orthoBottom": 1.7976931348623157e+308,
+            "diffuse": [
+                1,
+                1,
+                1
+            ],
+            "specular": [
+                1,
+                1,
+                1
+            ],
+            "falloffType": 2,
+            "intensity": 1,
+            "range": 1.7976931348623157e+308,
+            "intensityMode": 0,
+            "radius": 0.00001,
+            "_renderPriority": 0,
+            "shadowEnabled": true,
+            "excludeWithLayerMask": 0,
+            "includeOnlyWithLayerMask": 0,
+            "lightmapMode": 0,
+            "position": [
+                0,
+                0,
+                1
+            ],
+            "direction": [
+                0,
+                0,
+                -1
+            ],
+            "name": "Sun",
+            "id": "Sun",
+            "state": "",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/nodes/54/extensions/KHR_lights_punctual"
+                    ]
+                }
+            },
+            "type": 1,
+            "parentId": "Sun",
+            "animations": [],
+            "ranges": []
+        }
+    ],
+    "cameras": [
+        {
+            "applyGravity": true,
+            "checkCollisions": true,
+            "ellipsoid": [
+                0.2,
+                0.9,
+                0.2
+            ],
+            "fov": 1.024779,
+            "id": "default camera",
+            "inertia": 0.9,
+            "maxZ": 500,
+            "minZ": 0.05,
+            "name": "Camera04",
+            "position": [
+                -10.3257151,
+                1.80449986,
+                9.445365
+            ],
+            "rotation": [
+                0.0875154361,
+                2.88880157,
+                0
+            ],
+            "speed": 0.2,
+            "target": null
+        },
+        {
+            "applyGravity": false,
+            "checkCollisions": false,
+            "ellipsoid": [
+                0.2,
+                0.9,
+                0.2
+            ],
+            "fov": 1.024779,
+            "id": "f6bab523-a7a9-415a-859e-50e8b5b6fb1d",
+            "inertia": 0.9,
+            "maxZ": 1000,
+            "minZ": 0.01,
+            "name": "Camera01",
+            "position": [
+                -9.534442,
+                1.72878194,
+                7.347438
+            ],
+            "rotation": [
+                -4.94216543E-08,
+                2.88406515,
+                0
+            ],
+            "speed": 0.1,
+            "target": null
+        }
+    ],
+    "activeCameraID": "default camera",
+    "animations": [],
+    "materials": [
+        {
+            "tags": null,
+            "directIntensity": 1,
+            "emissiveIntensity": 1,
+            "environmentIntensity": 1,
+            "specularIntensity": 1,
+            "disableBumpMap": false,
+            "ambientTextureStrength": 1,
+            "ambientTextureImpactOnAnalyticalLights": 0,
+            "metallic": 0,
+            "roughness": 0.3288090062081349,
+            "metallicF0Factor": 1,
+            "metallicReflectanceColor": [
+                1,
+                1,
+                1
+            ],
+            "useOnlyMetallicFromMetallicReflectanceTexture": false,
+            "ambient": [
+                0,
+                0,
+                0
+            ],
+            "albedo": [
+                0.5,
+                0.5,
+                0.5
+            ],
+            "reflectivity": [
+                1,
+                1,
+                1
+            ],
+            "reflection": [
+                1,
+                1,
+                1
+            ],
+            "emissive": [
+                0,
+                0,
+                0
+            ],
+            "microSurface": 1,
+            "useLightmapAsShadowmap": false,
+            "useAlphaFromAlbedoTexture": false,
+            "forceAlphaTest": false,
+            "alphaCutOff": 0.4,
+            "useSpecularOverAlpha": true,
+            "useMicroSurfaceFromReflectivityMapAlpha": false,
+            "useRoughnessFromMetallicTextureAlpha": true,
+            "useRoughnessFromMetallicTextureGreen": false,
+            "useMetallnessFromMetallicTextureBlue": false,
+            "useAmbientOcclusionFromMetallicTextureRed": false,
+            "useAmbientInGrayScale": false,
+            "useAutoMicroSurfaceFromReflectivityMap": false,
+            "usePhysicalLightFalloff": true,
+            "useGLTFLightFalloff": false,
+            "useRadianceOverAlpha": true,
+            "useObjectSpaceNormalMap": false,
+            "useParallax": false,
+            "useParallaxOcclusion": false,
+            "parallaxScaleBias": 0.05,
+            "disableLighting": false,
+            "forceIrradianceInFragment": false,
+            "maxSimultaneousLights": 4,
+            "invertNormalMapX": false,
+            "invertNormalMapY": false,
+            "twoSidedLighting": false,
+            "useAlphaFresnel": false,
+            "useLinearAlphaFresnel": false,
+            "forceNormalForward": false,
+            "enableSpecularAntiAliasing": true,
+            "useHorizonOcclusion": true,
+            "useRadianceOcclusion": true,
+            "unlit": false,
+            "_imageProcessingConfiguration": {
+                "tags": null,
+                "colorCurves": {
+                    "tags": null,
+                    "_globalHue": 30,
+                    "_globalDensity": 0,
+                    "_globalSaturation": 0,
+                    "_globalExposure": 0,
+                    "_highlightsHue": 30,
+                    "_highlightsDensity": 0,
+                    "_highlightsSaturation": 0,
+                    "_highlightsExposure": 0,
+                    "_midtonesHue": 30,
+                    "_midtonesDensity": 0,
+                    "_midtonesSaturation": 0,
+                    "_midtonesExposure": 0
+                },
+                "_colorCurvesEnabled": false,
+                "_colorGradingEnabled": false,
+                "_colorGradingWithGreenDepth": true,
+                "_colorGradingBGR": true,
+                "_exposure": 1,
+                "_toneMappingEnabled": false,
+                "_toneMappingType": 0,
+                "_contrast": 1,
+                "vignetteStretch": 0,
+                "vignetteCentreX": 0,
+                "vignetteCentreY": 0,
+                "vignetteWeight": 1.5,
+                "vignetteColor": [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "vignetteCameraFov": 0.5,
+                "_vignetteBlendMode": 0,
+                "_vignetteEnabled": false,
+                "_applyByPostProcess": false,
+                "_isEnabled": true
+            },
+            "useLogarithmicDepth": false,
+            "id": "default material",
+            "name": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/materials/0"
+                    ]
+                }
+            },
+            "checkReadyOnEveryCall": false,
+            "checkReadyOnlyOnce": false,
+            "state": "",
+            "alpha": 1,
+            "backFaceCulling": true,
+            "cullBackFaces": true,
+            "sideOrientation": 1,
+            "alphaMode": 2,
+            "_needDepthPrePass": false,
+            "disableDepthWrite": false,
+            "disableColorWrite": false,
+            "forceDepthWrite": false,
+            "depthFunction": 0,
+            "separateCullingPass": false,
+            "fogEnabled": true,
+            "pointSize": 1,
+            "zOffset": 0,
+            "pointsCloud": false,
+            "fillMode": 0,
+            "transparencyMode": 0,
+            "customType": "BABYLON.PBRMaterial",
+            "stencil": {
+                "tags": null,
+                "func": 519,
+                "funcRef": 1,
+                "funcMask": 255,
+                "opStencilFail": 7680,
+                "opDepthFail": 7680,
+                "opStencilDepthPass": 7681,
+                "mask": 255,
+                "enabled": false
+            },
+            "clearCoat": {
+                "tags": null,
+                "isEnabled": false,
+                "intensity": 1,
+                "roughness": 0,
+                "indexOfRefraction": 1.5,
+                "useRoughnessFromMainTexture": true,
+                "remapF0OnInterfaceChange": true,
+                "isTintEnabled": false,
+                "tintColor": [
+                    1,
+                    1,
+                    1
+                ],
+                "tintColorAtDistance": 1,
+                "tintThickness": 1
+            },
+            "anisotropy": {
+                "tags": null,
+                "isEnabled": false,
+                "intensity": 1,
+                "direction": [
+                    1,
+                    0
+                ]
+            },
+            "brdf": {
+                "tags": null,
+                "useEnergyConservation": true,
+                "useSmithVisibilityHeightCorrelated": true,
+                "useSphericalHarmonics": true,
+                "useSpecularGlossinessInputEnergyConservation": true
+            },
+            "sheen": {
+                "tags": null,
+                "isEnabled": false,
+                "linkSheenWithAlbedo": false,
+                "intensity": 1,
+                "color": [
+                    1,
+                    1,
+                    1
+                ],
+                "useRoughnessFromMainTexture": true,
+                "albedoScaling": false
+            },
+            "subSurface": {
+                "tags": null,
+                "isRefractionEnabled": false,
+                "isTranslucencyEnabled": false,
+                "isScatteringEnabled": false,
+                "_scatteringDiffusionProfileIndex": 0,
+                "refractionIntensity": 1,
+                "translucencyIntensity": 1,
+                "useAlbedoToTintRefraction": false,
+                "useAlbedoToTintTranslucency": false,
+                "indexOfRefraction": 1.5,
+                "_volumeIndexOfRefraction": -1,
+                "invertRefractionY": false,
+                "linkRefractionWithTransparency": false,
+                "minimumThickness": 0,
+                "maximumThickness": 1,
+                "useThicknessAsDepth": false,
+                "tintColor": [
+                    1,
+                    1,
+                    1
+                ],
+                "tintColorAtDistance": 1,
+                "diffusionDistance": [
+                    1,
+                    1,
+                    1
+                ],
+                "useMaskFromThicknessTexture": false,
+                "useGltfStyleTextures": false
+            }
+        },
+        {
+            "tags": null,
+            "directIntensity": 1,
+            "emissiveIntensity": 1,
+            "environmentIntensity": 1,
+            "specularIntensity": 1,
+            "disableBumpMap": false,
+            "ambientTextureStrength": 1,
+            "ambientTextureImpactOnAnalyticalLights": 0,
+            "reflectionTexture": {
+                "tags": null,
+                "url": "https://assets.babylonjs.com/environments/environmentSpecular.env",
+                "rotationY": 0,
+                "files": [],
+                "textureMatrix": {
+                    "0": 1,
+                    "1": 0,
+                    "2": 0,
+                    "3": 0,
+                    "4": 0,
+                    "5": 1,
+                    "6": 0,
+                    "7": 0,
+                    "8": 0,
+                    "9": 0,
+                    "10": 1,
+                    "11": 0,
+                    "12": 0,
+                    "13": 0,
+                    "14": 0,
+                    "15": 1
+                },
+                "name": "https://assets.babylonjs.com/environments/environmentSpecular.env",
+                "hasAlpha": false,
+                "getAlphaFromRGB": false,
+                "level": 1,
+                "coordinatesIndex": 0,
+                "coordinatesMode": 5,
+                "wrapU": 0,
+                "wrapV": 0,
+                "wrapR": 1,
+                "anisotropicFilteringLevel": 1,
+                "isCube": true,
+                "is3D": false,
+                "is2DArray": false,
+                "gammaSpace": false,
+                "invertZ": false,
+                "lodLevelInAlpha": false,
+                "lodGenerationOffset": 0,
+                "lodGenerationScale": 0.8,
+                "linearSpecularLOD": false,
+                "isRenderTarget": false,
+                "animations": []
+            },
+            "metallicF0Factor": 1,
+            "metallicReflectanceColor": [
+                1,
+                1,
+                1
+            ],
+            "useOnlyMetallicFromMetallicReflectanceTexture": false,
+            "ambient": [
+                0,
+                0,
+                0
+            ],
+            "albedo": [
+                1,
+                1,
+                1
+            ],
+            "reflectivity": [
+                1,
+                1,
+                1
+            ],
+            "reflection": [
+                1,
+                1,
+                1
+            ],
+            "emissive": [
+                0,
+                0,
+                0
+            ],
+            "microSurface": 0.7,
+            "useLightmapAsShadowmap": false,
+            "useAlphaFromAlbedoTexture": false,
+            "forceAlphaTest": false,
+            "alphaCutOff": 0.4,
+            "useSpecularOverAlpha": true,
+            "useMicroSurfaceFromReflectivityMapAlpha": false,
+            "useRoughnessFromMetallicTextureAlpha": true,
+            "useRoughnessFromMetallicTextureGreen": false,
+            "useMetallnessFromMetallicTextureBlue": false,
+            "useAmbientOcclusionFromMetallicTextureRed": false,
+            "useAmbientInGrayScale": false,
+            "useAutoMicroSurfaceFromReflectivityMap": false,
+            "usePhysicalLightFalloff": true,
+            "useGLTFLightFalloff": false,
+            "useRadianceOverAlpha": true,
+            "useObjectSpaceNormalMap": false,
+            "useParallax": false,
+            "useParallaxOcclusion": false,
+            "parallaxScaleBias": 0.05,
+            "disableLighting": true,
+            "forceIrradianceInFragment": false,
+            "maxSimultaneousLights": 4,
+            "invertNormalMapX": false,
+            "invertNormalMapY": false,
+            "twoSidedLighting": true,
+            "useAlphaFresnel": false,
+            "useLinearAlphaFresnel": false,
+            "forceNormalForward": false,
+            "enableSpecularAntiAliasing": false,
+            "useHorizonOcclusion": true,
+            "useRadianceOcclusion": true,
+            "unlit": false,
+            "_imageProcessingConfiguration": {
+                "tags": null,
+                "colorCurves": {
+                    "tags": null,
+                    "_globalHue": 30,
+                    "_globalDensity": 0,
+                    "_globalSaturation": 0,
+                    "_globalExposure": 0,
+                    "_highlightsHue": 30,
+                    "_highlightsDensity": 0,
+                    "_highlightsSaturation": 0,
+                    "_highlightsExposure": 0,
+                    "_midtonesHue": 30,
+                    "_midtonesDensity": 0,
+                    "_midtonesSaturation": 0,
+                    "_midtonesExposure": 0
+                },
+                "_colorCurvesEnabled": false,
+                "_colorGradingEnabled": false,
+                "_colorGradingWithGreenDepth": true,
+                "_colorGradingBGR": true,
+                "_exposure": 1,
+                "_toneMappingEnabled": false,
+                "_toneMappingType": 0,
+                "_contrast": 1,
+                "vignetteStretch": 0,
+                "vignetteCentreX": 0,
+                "vignetteCentreY": 0,
+                "vignetteWeight": 1.5,
+                "vignetteColor": [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "vignetteCameraFov": 0.5,
+                "_vignetteBlendMode": 0,
+                "_vignetteEnabled": false,
+                "_applyByPostProcess": false,
+                "_isEnabled": true
+            },
+            "useLogarithmicDepth": false,
+            "id": "skyBox",
+            "name": "skyBox",
+            "checkReadyOnEveryCall": false,
+            "checkReadyOnlyOnce": false,
+            "state": "",
+            "alpha": 1,
+            "backFaceCulling": false,
+            "cullBackFaces": true,
+            "sideOrientation": 1,
+            "alphaMode": 2,
+            "_needDepthPrePass": false,
+            "disableDepthWrite": false,
+            "disableColorWrite": false,
+            "forceDepthWrite": false,
+            "depthFunction": 0,
+            "separateCullingPass": false,
+            "fogEnabled": true,
+            "pointSize": 1,
+            "zOffset": 0,
+            "pointsCloud": false,
+            "fillMode": 0,
+            "customType": "BABYLON.PBRMaterial",
+            "stencil": {
+                "tags": null,
+                "func": 519,
+                "funcRef": 1,
+                "funcMask": 255,
+                "opStencilFail": 7680,
+                "opDepthFail": 7680,
+                "opStencilDepthPass": 7681,
+                "mask": 255,
+                "enabled": false
+            },
+            "clearCoat": {
+                "tags": null,
+                "isEnabled": false,
+                "intensity": 1,
+                "roughness": 0,
+                "indexOfRefraction": 1.5,
+                "useRoughnessFromMainTexture": true,
+                "remapF0OnInterfaceChange": true,
+                "isTintEnabled": false,
+                "tintColor": [
+                    1,
+                    1,
+                    1
+                ],
+                "tintColorAtDistance": 1,
+                "tintThickness": 1
+            },
+            "anisotropy": {
+                "tags": null,
+                "isEnabled": false,
+                "intensity": 1,
+                "direction": [
+                    1,
+                    0
+                ]
+            },
+            "brdf": {
+                "tags": null,
+                "useEnergyConservation": true,
+                "useSmithVisibilityHeightCorrelated": true,
+                "useSphericalHarmonics": true,
+                "useSpecularGlossinessInputEnergyConservation": true
+            },
+            "sheen": {
+                "tags": null,
+                "isEnabled": false,
+                "linkSheenWithAlbedo": false,
+                "intensity": 1,
+                "color": [
+                    1,
+                    1,
+                    1
+                ],
+                "useRoughnessFromMainTexture": true,
+                "albedoScaling": false
+            },
+            "subSurface": {
+                "tags": null,
+                "isRefractionEnabled": false,
+                "isTranslucencyEnabled": false,
+                "isScatteringEnabled": false,
+                "_scatteringDiffusionProfileIndex": 0,
+                "refractionIntensity": 1,
+                "translucencyIntensity": 1,
+                "useAlbedoToTintRefraction": false,
+                "useAlbedoToTintTranslucency": false,
+                "indexOfRefraction": 1.5,
+                "_volumeIndexOfRefraction": -1,
+                "invertRefractionY": false,
+                "linkRefractionWithTransparency": false,
+                "minimumThickness": 0,
+                "maximumThickness": 1,
+                "useThicknessAsDepth": false,
+                "tintColor": [
+                    1,
+                    1,
+                    1
+                ],
+                "tintColorAtDistance": 1,
+                "diffusionDistance": [
+                    1,
+                    1,
+                    1
+                ],
+                "useMaskFromThicknessTexture": false,
+                "useGltfStyleTextures": false
+            }
+        },
+        {
+            "tags": null,
+            "ambient": [
+                0,
+                0,
+                0
+            ],
+            "diffuse": [
+                1,
+                1,
+                1
+            ],
+            "specular": [
+                1,
+                1,
+                1
+            ],
+            "emissive": [
+                0,
+                0,
+                0
+            ],
+            "specularPower": 64,
+            "useAlphaFromDiffuseTexture": false,
+            "useEmissiveAsIllumination": false,
+            "linkEmissiveWithDiffuse": false,
+            "useSpecularOverAlpha": false,
+            "useReflectionOverAlpha": false,
+            "disableLighting": false,
+            "useObjectSpaceNormalMap": false,
+            "useParallax": false,
+            "useParallaxOcclusion": false,
+            "parallaxScaleBias": 0.05,
+            "roughness": 0,
+            "indexOfRefraction": 0.98,
+            "invertRefractionY": true,
+            "alphaCutOff": 0.4,
+            "useLightmapAsShadowmap": false,
+            "useReflectionFresnelFromSpecular": false,
+            "useGlossinessFromSpecularMapAlpha": false,
+            "maxSimultaneousLights": 4,
+            "invertNormalMapX": false,
+            "invertNormalMapY": false,
+            "twoSidedLighting": false,
+            "id": "default material",
+            "name": "default material",
+            "checkReadyOnEveryCall": false,
+            "checkReadyOnlyOnce": false,
+            "state": "",
+            "alpha": 1,
+            "backFaceCulling": true,
+            "cullBackFaces": true,
+            "sideOrientation": 1,
+            "alphaMode": 2,
+            "_needDepthPrePass": false,
+            "disableDepthWrite": false,
+            "disableColorWrite": false,
+            "forceDepthWrite": false,
+            "depthFunction": 0,
+            "separateCullingPass": false,
+            "fogEnabled": true,
+            "pointSize": 1,
+            "zOffset": 0,
+            "pointsCloud": false,
+            "fillMode": 0,
+            "stencil": {
+                "tags": null,
+                "func": 519,
+                "funcRef": 1,
+                "funcMask": 255,
+                "opStencilFail": 7680,
+                "opDepthFail": 7680,
+                "opStencilDepthPass": 7681,
+                "mask": 255,
+                "enabled": false
+            }
+        }
+    ],
+    "multiMaterials": [],
+    "environmentTexture": "https://assets.babylonjs.com/environments/environmentSpecular.env",
+    "environmentIntensity": 1,
+    "skeletons": [],
+    "transformNodes": [
+        {
+            "tags": null,
+            "position": [
+                8.802,
+                0.0678,
+                0.7015
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                1,
+                0,
+                0
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "billboardMode": 0,
+            "scalingDeterminant": 1,
+            "infiniteDistance": false,
+            "ignoreNonUniformScaling": false,
+            "reIntegrateRotationIntoRotationQuaternion": false,
+            "name": "bathroomDoorMaster",
+            "id": "bathroomDoorMaster",
+            "state": "",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/nodes/1"
+                    ]
+                }
+            },
+            "type": "TransformNode",
+            "parentId": "__root__",
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true
+        },
+        {
+            "tags": null,
+            "position": [
+                17.0712,
+                -0.0005,
+                -3.9028
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                0.7071054825112364,
+                0,
+                -0.7071080798594737
+            ],
+            "scaling": [
+                0.985,
+                1.0632,
+                1
+            ],
+            "billboardMode": 0,
+            "scalingDeterminant": 1,
+            "infiniteDistance": false,
+            "ignoreNonUniformScaling": false,
+            "reIntegrateRotationIntoRotationQuaternion": false,
+            "name": "frontDoorMaster",
+            "id": "frontDoorMaster",
+            "state": "",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/nodes/8"
+                    ]
+                }
+            },
+            "type": "TransformNode",
+            "parentId": "__root__",
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true
+        },
+        {
+            "tags": null,
+            "position": [
+                -11.2714,
+                0.0054,
+                -0.0589
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                0.7071054825112364,
+                0,
+                -0.7071080798594737
+            ],
+            "scaling": [
+                9.2639,
+                4.3126,
+                4.2803
+            ],
+            "billboardMode": 0,
+            "scalingDeterminant": 1,
+            "infiniteDistance": false,
+            "ignoreNonUniformScaling": false,
+            "reIntegrateRotationIntoRotationQuaternion": false,
+            "name": "windowMaster",
+            "id": "windowMaster",
+            "state": "",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/nodes/16"
+                    ]
+                }
+            },
+            "type": "TransformNode",
+            "parentId": "__root__",
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true
+        },
+        {
+            "tags": null,
+            "position": [
+                -2.3972,
+                0,
+                6.3053
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                1,
+                0,
+                0
+            ],
+            "scaling": [
+                4.302,
+                4.302,
+                4.302
+            ],
+            "billboardMode": 0,
+            "scalingDeterminant": 1,
+            "infiniteDistance": false,
+            "ignoreNonUniformScaling": false,
+            "reIntegrateRotationIntoRotationQuaternion": false,
+            "name": "luxury_bed",
+            "id": "luxury_bed",
+            "state": "",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/nodes/22"
+                    ]
+                }
+            },
+            "type": "TransformNode",
+            "parentId": "__root__",
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true
+        },
+        {
+            "tags": null,
+            "position": [
+                2.2137,
+                0.5312,
+                12.6213
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                1,
+                0,
+                0
+            ],
+            "scaling": [
+                1.4962,
+                1.4962,
+                1.4962
+            ],
+            "billboardMode": 0,
+            "scalingDeterminant": 1,
+            "infiniteDistance": false,
+            "ignoreNonUniformScaling": false,
+            "reIntegrateRotationIntoRotationQuaternion": false,
+            "name": "nightstandMaster",
+            "id": "nightstandMaster",
+            "state": "",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/nodes/45"
+                    ]
+                }
+            },
+            "type": "TransformNode",
+            "parentId": "__root__",
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true
+        },
+        {
+            "tags": null,
+            "position": [
+                -33.8514,
+                2.9725,
+                3.9763
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "rotationQuaternion": [
+                0.014109641382381456,
+                0.7069659949531241,
+                0.014109641382381457,
+                -0.706965994953124
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "billboardMode": 0,
+            "scalingDeterminant": 1,
+            "infiniteDistance": false,
+            "ignoreNonUniformScaling": false,
+            "reIntegrateRotationIntoRotationQuaternion": false,
+            "name": "Sun",
+            "id": "Sun",
+            "state": "",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/nodes/54"
+                    ]
+                }
+            },
+            "type": "TransformNode",
+            "parentId": "__root__",
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true
+        }
+    ],
+    "geometries": {
+        "boxes": [],
+        "spheres": [],
+        "cylinders": [],
+        "toruses": [],
+        "grounds": [],
+        "planes": [],
+        "torusKnots": [],
+        "vertexData": [
+            {
+                "id": "topCeiling",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.topCeiling.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -1,
+                    0,
+                    -1
+                ],
+                "boundingBoxMaximum": [
+                    1,
+                    5e-324,
+                    1
+                ]
+            },
+            {
+                "id": "CTRL_Baseboard.001",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.CTRL_Baseboard.001.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.5,
+                    0,
+                    -0.4000000059604645
+                ],
+                "boundingBoxMaximum": [
+                    0.5,
+                    0.4000000059604645,
+                    5e-324
+                ]
+            },
+            {
+                "id": "CTRL_Hole.002",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.CTRL_Hole.002.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.5,
+                    0,
+                    -0.23999999463558197
+                ],
+                "boundingBoxMaximum": [
+                    0.5,
+                    2.0999999046325684,
+                    5e-324
+                ]
+            },
+            {
+                "id": "DoorFrame.001",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.DoorFrame.001.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.5,
+                    0,
+                    -0.053300000727176666
+                ],
+                "boundingBoxMaximum": [
+                    0.5,
+                    2.0999999046325684,
+                    0.02669999934732914
+                ]
+            },
+            {
+                "id": "Door.001",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.Door.001.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.8360000252723694,
+                    -1.0460000038146973,
+                    -0.03400000184774399
+                ],
+                "boundingBoxMaximum": [
+                    5e-324,
+                    0.9639999866485596,
+                    5e-324
+                ]
+            },
+            {
+                "id": "Handle_Back.001",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.Handle_Back.001.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.042399998754262924,
+                    -0.042500000447034836,
+                    0.0031999999191612005
+                ],
+                "boundingBoxMaximum": [
+                    0.042500000447034836,
+                    0.042399998754262924,
+                    0.08869999647140503
+                ]
+            },
+            {
+                "id": "Handle_Front.001",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.Handle_Front.001.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.042399998754262924,
+                    -0.042500000447034836,
+                    0.0031999999191612005
+                ],
+                "boundingBoxMaximum": [
+                    0.042500000447034836,
+                    0.042399998754262924,
+                    0.08869999647140503
+                ]
+            },
+            {
+                "id": "CTRL_Baseboard",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.CTRL_Baseboard.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.6200000047683716,
+                    0,
+                    -0.4000000059604645
+                ],
+                "boundingBoxMaximum": [
+                    0.6200000047683716,
+                    0.4000000059604645,
+                    5e-324
+                ]
+            },
+            {
+                "id": "CTRL_Hole.001",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.CTRL_Hole.001.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.6200000047683716,
+                    0,
+                    -0.23999999463558197
+                ],
+                "boundingBoxMaximum": [
+                    0.6200000047683716,
+                    2.309999942779541,
+                    5e-324
+                ]
+            },
+            {
+                "id": "DoorFrame",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.DoorFrame.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.6200000047683716,
+                    0,
+                    -0.053300000727176666
+                ],
+                "boundingBoxMaximum": [
+                    0.6200000047683716,
+                    2.309999942779541,
+                    0.02669999934732914
+                ]
+            },
+            {
+                "id": "Door",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.Door.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    0,
+                    -1.1510000228881836,
+                    -0.03400000184774399
+                ],
+                "boundingBoxMaximum": [
+                    1.0759999752044678,
+                    1.069000005722046,
+                    5e-324
+                ]
+            },
+            {
+                "id": "Handle_Back",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.Handle_Back.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.042399998754262924,
+                    -0.042500000447034836,
+                    0.0031999999191612005
+                ],
+                "boundingBoxMaximum": [
+                    0.042500000447034836,
+                    0.042399998754262924,
+                    0.08869999647140503
+                ]
+            },
+            {
+                "id": "Handle_Front",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.Handle_Front.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.042399998754262924,
+                    -0.042500000447034836,
+                    0.0031999999191612005
+                ],
+                "boundingBoxMaximum": [
+                    0.042500000447034836,
+                    0.042399998754262924,
+                    0.08869999647140503
+                ]
+            },
+            {
+                "id": "featureWall",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.featureWall.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    1.1979000568389893,
+                    0,
+                    93.98600006103516
+                ],
+                "boundingBoxMaximum": [
+                    116.93569946289062,
+                    39.96419906616211,
+                    93.98600006103516
+                ]
+            },
+            {
+                "id": "windowGlass",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.windowGlass.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -1.1299999952316284,
+                    0.07000000029802322,
+                    -0.04500000178813934
+                ],
+                "boundingBoxMaximum": [
+                    1.1299999952316284,
+                    1.9299999475479126,
+                    0.004999999888241291
+                ]
+            },
+            {
+                "id": "windowFrame",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.windowFrame.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -1.25,
+                    -0.000699999975040555,
+                    -0.06499999761581421
+                ],
+                "boundingBoxMaximum": [
+                    1.25,
+                    2,
+                    0.02500000037252903
+                ]
+            },
+            {
+                "id": "Ceiling",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.Ceiling.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    1,
+                    39.96419906616211,
+                    1
+                ],
+                "boundingBoxMaximum": [
+                    116.93569946289062,
+                    39.96419906616211,
+                    93.98600006103516
+                ]
+            },
+            {
+                "id": "Walls",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.Walls.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -1,
+                    0,
+                    -1
+                ],
+                "boundingBoxMaximum": [
+                    119.50769805908203,
+                    39.96419906616211,
+                    96.75579833984375
+                ]
+            },
+            {
+                "id": "luxury_bed_cover",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.luxury_bed_cover.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -1.0253000259399414,
+                    0.010599999688565731,
+                    -1.0354000329971313
+                ],
+                "boundingBoxMaximum": [
+                    1.0413000583648682,
+                    0.5472000241279602,
+                    1.1342999935150146
+                ]
+            },
+            {
+                "id": "luxury_bed_cushion.001",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.luxury_bed_cushion.001.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.6468999981880188,
+                    0.6757000088691711,
+                    -0.9083999991416931
+                ],
+                "boundingBoxMaximum": [
+                    0.8066999912261963,
+                    1.0716999769210815,
+                    5e-324
+                ]
+            },
+            {
+                "id": "luxury_bed_cushion.002",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.luxury_bed_cushion.002.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.3815999925136566,
+                    0.7239999771118164,
+                    -0.7142999768257141
+                ],
+                "boundingBoxMaximum": [
+                    0.4320000112056732,
+                    1.0886000394821167,
+                    5e-324
+                ]
+            },
+            {
+                "id": "luxury_bed_cushion.003",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.luxury_bed_cushion.003.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.12809999287128448,
+                    0.7365000247955322,
+                    -0.5044000148773193
+                ],
+                "boundingBoxMaximum": [
+                    0.302700012922287,
+                    1.0622999668121338,
+                    5e-324
+                ]
+            },
+            {
+                "id": "luxury_bed_cushion.004",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.luxury_bed_cushion.004.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.1290999948978424,
+                    0.7422999739646912,
+                    -0.3605000078678131
+                ],
+                "boundingBoxMaximum": [
+                    0.29589998722076416,
+                    0.9229000210762024,
+                    5e-324
+                ]
+            },
+            {
+                "id": "luxury_bed_cushion.004_detail",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.luxury_bed_cushion.004_detail.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.21739999949932098,
+                    -0.18230000138282776,
+                    -0.06610000133514404
+                ],
+                "boundingBoxMaximum": [
+                    0.20659999549388885,
+                    5e-324,
+                    0.0828000009059906
+                ]
+            },
+            {
+                "id": "luxury_bed_cushion.004_detail1",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.luxury_bed_cushion.004_detail1.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.21739999949932098,
+                    -0.18250000476837158,
+                    -0.06610000133514404
+                ],
+                "boundingBoxMaximum": [
+                    0.20659999549388885,
+                    5e-324,
+                    0.08959999680519104
+                ]
+            },
+            {
+                "id": "luxury_bed_cushion.004_detail2",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.luxury_bed_cushion.004_detail2.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.14740000665187836,
+                    -0.18250000476837158,
+                    -0.06610000133514404
+                ],
+                "boundingBoxMaximum": [
+                    0.1559000015258789,
+                    5e-324,
+                    0.08959999680519104
+                ]
+            },
+            {
+                "id": "luxury_bed_cushion",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.luxury_bed_cushion.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.5999000072479248,
+                    0.7084000110626221,
+                    -1.042799949645996
+                ],
+                "boundingBoxMaximum": [
+                    0.6801999807357788,
+                    1.246000051498413,
+                    5e-324
+                ]
+            },
+            {
+                "id": "luxury_bed_footboard",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.luxury_bed_footboard.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.9100000262260437,
+                    0,
+                    -1.0499999523162842
+                ],
+                "boundingBoxMaximum": [
+                    0.9100000262260437,
+                    0.5600000023841858,
+                    1.1719000339508057
+                ]
+            },
+            {
+                "id": "luxury_bed_headboard",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.luxury_bed_headboard.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.9100000262260437,
+                    0,
+                    -1.100000023841858
+                ],
+                "boundingBoxMaximum": [
+                    0.9100000262260437,
+                    1.0806000232696533,
+                    5e-324
+                ]
+            },
+            {
+                "id": "luxury_bed_headboardtop",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.luxury_bed_headboardtop.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.9100000262260437,
+                    1.0115000009536743,
+                    -1.100000023841858
+                ],
+                "boundingBoxMaximum": [
+                    0.9100000262260437,
+                    1.1966999769210815,
+                    5e-324
+                ]
+            },
+            {
+                "id": "luxury_bed_headboardtop1",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.luxury_bed_headboardtop1.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.9100000262260437,
+                    1.0115000009536743,
+                    -1.100000023841858
+                ],
+                "boundingBoxMaximum": [
+                    0.9100000262260437,
+                    1.1966999769210815,
+                    5e-324
+                ]
+            },
+            {
+                "id": "luxury_bed_mattress",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.luxury_bed_mattress.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.8608999848365784,
+                    0.1185000017285347,
+                    -1.0442999601364136
+                ],
+                "boundingBoxMaximum": [
+                    0.8608999848365784,
+                    0.6000000238418579,
+                    1.100000023841858
+                ]
+            },
+            {
+                "id": "Widescreen TV",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.Widescreen_TV.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.7620000243186951,
+                    -0.4318000078201294,
+                    0
+                ],
+                "boundingBoxMaximum": [
+                    0.7620000243186951,
+                    0.4318000078201294,
+                    0.07620000094175339
+                ]
+            },
+            {
+                "id": "wideScreenGlass",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.wideScreenGlass.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.6996999979019165,
+                    -0.3695000112056732,
+                    0.0697999969124794
+                ],
+                "boundingBoxMaximum": [
+                    0.6996999979019165,
+                    0.3695000112056732,
+                    0.0697999969124794
+                ]
+            },
+            {
+                "id": "modern_tvcabinet",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.modern_tvcabinet.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -1.0996999740600586,
+                    0.00009999999747378752,
+                    -0.24959999322891235
+                ],
+                "boundingBoxMaximum": [
+                    1.0997999906539917,
+                    0.5577999949455261,
+                    0.24959999322891235
+                ]
+            },
+            {
+                "id": "lampBase",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.lampBase.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -1,
+                    -1,
+                    -1
+                ],
+                "boundingBoxMaximum": [
+                    1,
+                    1,
+                    1
+                ]
+            },
+            {
+                "id": "lamp.body",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.lamp.body.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -1,
+                    -1,
+                    -1
+                ],
+                "boundingBoxMaximum": [
+                    1,
+                    1,
+                    1
+                ]
+            },
+            {
+                "id": "lamp.neck",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.lamp.neck.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -1,
+                    -1,
+                    -1
+                ],
+                "boundingBoxMaximum": [
+                    1,
+                    1,
+                    1
+                ]
+            },
+            {
+                "id": "lamp.shade",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.lamp.shade.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -1.37909996509552,
+                    -0.9484000205993652,
+                    -1.37909996509552
+                ],
+                "boundingBoxMaximum": [
+                    1.37909996509552,
+                    0.9265999794006348,
+                    1.37909996509552
+                ]
+            },
+            {
+                "id": "lamp.top",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.lamp.top.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -1,
+                    -1,
+                    -0.9972000122070312
+                ],
+                "boundingBoxMaximum": [
+                    1,
+                    1,
+                    0.9972000122070312
+                ]
+            },
+            {
+                "id": "Nightstand bottom",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.Nightstand_bottom.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -1,
+                    0,
+                    -1
+                ],
+                "boundingBoxMaximum": [
+                    1,
+                    0.06109999865293503,
+                    1
+                ]
+            },
+            {
+                "id": "Nightstand.drawer",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.Nightstand.drawer.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -1.0631999969482422,
+                    -1.0631999969482422,
+                    -1
+                ],
+                "boundingBoxMaximum": [
+                    1.0631999969482422,
+                    1.0631999969482422,
+                    1.1297999620437622
+                ]
+            },
+            {
+                "id": "Nightstand.drawerstop",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.Nightstand.drawerstop.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -1,
+                    -1,
+                    -1
+                ],
+                "boundingBoxMaximum": [
+                    1,
+                    1,
+                    1
+                ]
+            },
+            {
+                "id": "Nightstand.knob",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.Nightstand.knob.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -0.9879999756813049,
+                    -1.9401999711990356,
+                    -0.9879999756813049
+                ],
+                "boundingBoxMaximum": [
+                    0.9879999756813049,
+                    0.9983999729156494,
+                    0.9879999756813049
+                ]
+            },
+            {
+                "id": "Nightstand bottom drawer",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.Nightstand_bottom%20drawer.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -1.0631999969482422,
+                    -1.0631999969482422,
+                    -1
+                ],
+                "boundingBoxMaximum": [
+                    1.0631999969482422,
+                    1.0631999969482422,
+                    1.1297999620437622
+                ]
+            },
+            {
+                "id": "Nightstand left side",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.Nightstand_left%20side.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -1,
+                    0,
+                    -1
+                ],
+                "boundingBoxMaximum": [
+                    1,
+                    0.06109999865293503,
+                    1
+                ]
+            },
+            {
+                "id": "Nightstand right.001",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.Nightstand_right.001.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -1,
+                    0,
+                    -1
+                ],
+                "boundingBoxMaximum": [
+                    1,
+                    0.06109999865293503,
+                    1
+                ]
+            },
+            {
+                "id": "Nightstand right",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.Nightstand_right.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -1,
+                    0,
+                    -1
+                ],
+                "boundingBoxMaximum": [
+                    1,
+                    0.06109999865293503,
+                    1
+                ]
+            },
+            {
+                "id": "Nightstand top",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "indices": null,
+                "delayLoadingFile": "scene.Nightstand_top.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -1.0580999851226807,
+                    0,
+                    -1.0580999851226807
+                ],
+                "boundingBoxMaximum": [
+                    1.0580999851226807,
+                    0.1200999990105629,
+                    1.0580999851226807
+                ]
+            },
+            {
+                "id": "5becca8a-806d-468a-9bc9-67b4e0e4b350",
+                "updatable": false,
+                "positions": null,
+                "normals": null,
+                "uvs": null,
+                "indices": null,
+                "delayLoadingFile": "scene.5becca8a-806d-468a-9bc9-67b4e0e4b350.babylongeometrydata",
+                "boundingBoxMinimum": [
+                    -14867.83716532517,
+                    -14867.83716532517,
+                    -14867.83716532517
+                ],
+                "boundingBoxMaximum": [
+                    14867.83716532517,
+                    14867.83716532517,
+                    14867.83716532517
+                ],
+                "hasUVs": true
+            }
+        ]
+    },
+    "meshes": [
+        {
+            "name": "__root__",
+            "id": "__root__",
+            "uniqueId": 0,
+            "type": "Mesh",
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                1,
+                0,
+                0
+            ],
+            "scaling": [
+                1,
+                1,
+                -1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": null,
+            "isUnIndexed": false,
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "topCeiling",
+            "id": "topCeiling",
+            "uniqueId": 1,
+            "type": "Mesh",
+            "position": [
+                3.2186,
+                9.7554,
+                -0.0217
+            ],
+            "rotationQuaternion": [
+                0,
+                1,
+                0,
+                0
+            ],
+            "scaling": [
+                14.7766,
+                13.661,
+                12.2503
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "__root__",
+            "isUnIndexed": false,
+            "geometryId": "topCeiling",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 4,
+                    "indexStart": 0,
+                    "indexCount": 6
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/0/primitives/0",
+                        "/nodes/0"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "CTRL_Baseboard.001",
+            "id": "CTRL_Baseboard.001",
+            "uniqueId": 6,
+            "type": "Mesh",
+            "position": [
+                0,
+                -0.1,
+                0.1767
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "bathroomDoorMaster",
+            "isUnIndexed": false,
+            "geometryId": "CTRL_Baseboard.001",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 8,
+                    "indexStart": 0,
+                    "indexCount": 12
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/1/primitives/0",
+                        "/nodes/2"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "CTRL_Hole.002",
+            "id": "CTRL_Hole.002",
+            "uniqueId": 8,
+            "type": "Mesh",
+            "position": [
+                0,
+                -0.002,
+                0.12
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                3.7742,
+                3.7742,
+                3.7742
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "bathroomDoorMaster",
+            "isUnIndexed": false,
+            "geometryId": "CTRL_Hole.002",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 8,
+                    "indexStart": 0,
+                    "indexCount": 36
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/2/primitives/0",
+                        "/nodes/3"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "DoorFrame.001",
+            "id": "DoorFrame.001",
+            "uniqueId": 10,
+            "type": "Mesh",
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                3.7394,
+                3.7394,
+                3.7394
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "bathroomDoorMaster",
+            "isUnIndexed": false,
+            "geometryId": "DoorFrame.001",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 32,
+                    "indexStart": 0,
+                    "indexCount": 141
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/3/primitives/0",
+                        "/nodes/4"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "Door.001",
+            "id": "Door.001",
+            "uniqueId": 12,
+            "type": "Mesh",
+            "position": [
+                0.418,
+                1.05,
+                0.0221
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "DoorFrame.001",
+            "isUnIndexed": false,
+            "geometryId": "Door.001",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 8,
+                    "indexStart": 0,
+                    "indexCount": 36
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/4/primitives/0",
+                        "/nodes/5"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "Handle_Back.001",
+            "id": "Handle_Back.001",
+            "uniqueId": 14,
+            "type": "Mesh",
+            "position": [
+                -0.764,
+                0,
+                -0.005
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "Door.001",
+            "isUnIndexed": false,
+            "geometryId": "Handle_Back.001",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 2786,
+                    "indexStart": 0,
+                    "indexCount": 16704
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/5/primitives/0",
+                        "/nodes/6"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "Handle_Front.001",
+            "id": "Handle_Front.001",
+            "uniqueId": 16,
+            "type": "Mesh",
+            "position": [
+                -0.764,
+                0,
+                -0.029
+            ],
+            "rotationQuaternion": [
+                -0.999999999993254,
+                0,
+                0,
+                -0.0000036732051033465748
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "Door.001",
+            "isUnIndexed": false,
+            "geometryId": "Handle_Front.001",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 2786,
+                    "indexStart": 0,
+                    "indexCount": 16704
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/6/primitives/0",
+                        "/nodes/7"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "CTRL_Baseboard",
+            "id": "CTRL_Baseboard",
+            "uniqueId": 19,
+            "type": "Mesh",
+            "position": [
+                0,
+                -0.1,
+                0.1767
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "frontDoorMaster",
+            "isUnIndexed": false,
+            "geometryId": "CTRL_Baseboard",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 8,
+                    "indexStart": 0,
+                    "indexCount": 12
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/7/primitives/0",
+                        "/nodes/9"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "CTRL_Hole.001",
+            "id": "CTRL_Hole.001",
+            "uniqueId": 21,
+            "type": "Mesh",
+            "position": [
+                0,
+                -0.002,
+                0.12
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "frontDoorMaster",
+            "isUnIndexed": false,
+            "geometryId": "CTRL_Hole.001",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 8,
+                    "indexStart": 0,
+                    "indexCount": 36
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/8/primitives/0",
+                        "/nodes/10"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "DoorFrame",
+            "id": "DoorFrame",
+            "uniqueId": 23,
+            "type": "Mesh",
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                3.165,
+                3.165,
+                3.165
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "frontDoorMaster",
+            "isUnIndexed": false,
+            "geometryId": "DoorFrame",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 38,
+                    "indexStart": 0,
+                    "indexCount": 141
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/9/primitives/0",
+                        "/nodes/11"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "Door",
+            "id": "Door",
+            "uniqueId": 25,
+            "type": "Mesh",
+            "position": [
+                -0.538,
+                1.155,
+                0.0221
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "DoorFrame",
+            "isUnIndexed": false,
+            "geometryId": "Door",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 25,
+                    "indexStart": 0,
+                    "indexCount": 36
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/10/primitives/0",
+                        "/nodes/12"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "Handle_Back",
+            "id": "Handle_Back",
+            "uniqueId": 27,
+            "type": "Mesh",
+            "position": [
+                1.004,
+                0,
+                -0.005
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "Door",
+            "isUnIndexed": false,
+            "geometryId": "Handle_Back",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 3422,
+                    "indexStart": 0,
+                    "indexCount": 16704
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/11/primitives/0",
+                        "/nodes/13"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "Handle_Front",
+            "id": "Handle_Front",
+            "uniqueId": 29,
+            "type": "Mesh",
+            "position": [
+                1.004,
+                0,
+                -0.029
+            ],
+            "rotationQuaternion": [
+                -0.999999999993254,
+                0,
+                0,
+                -0.0000036732051033465748
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "Door",
+            "isUnIndexed": false,
+            "geometryId": "Handle_Front",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 3422,
+                    "indexStart": 0,
+                    "indexCount": 16704
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/12/primitives/0",
+                        "/nodes/14"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "featureWall",
+            "id": "featureWall",
+            "uniqueId": 31,
+            "type": "Mesh",
+            "position": [
+                17.3216,
+                0,
+                11.4594
+            ],
+            "rotationQuaternion": [
+                0,
+                1,
+                0,
+                0
+            ],
+            "scaling": [
+                0.2418,
+                0.2418,
+                0.2418
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "__root__",
+            "isUnIndexed": false,
+            "geometryId": "featureWall",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 8,
+                    "indexStart": 0,
+                    "indexCount": 18
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/13/primitives/0",
+                        "/nodes/15"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "windowGlass",
+            "id": "windowGlass",
+            "uniqueId": 34,
+            "type": "Mesh",
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "windowMaster",
+            "isUnIndexed": false,
+            "geometryId": "windowGlass",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 24,
+                    "indexStart": 0,
+                    "indexCount": 36
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/14/primitives/0",
+                        "/nodes/17"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "windowFrame",
+            "id": "windowFrame",
+            "uniqueId": 36,
+            "type": "Mesh",
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "windowMaster",
+            "isUnIndexed": false,
+            "geometryId": "windowFrame",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 112,
+                    "indexStart": 0,
+                    "indexCount": 378
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/15/primitives/0",
+                        "/nodes/18"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "Ceiling",
+            "id": "Ceiling",
+            "uniqueId": 38,
+            "type": "Mesh",
+            "position": [
+                17.3216,
+                0,
+                11.4594
+            ],
+            "rotationQuaternion": [
+                0,
+                1,
+                0,
+                0
+            ],
+            "scaling": [
+                0.2418,
+                0.2418,
+                0.2418
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "__root__",
+            "isUnIndexed": false,
+            "geometryId": "Ceiling",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 12,
+                    "indexStart": 0,
+                    "indexCount": 30
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/17/primitives/0",
+                        "/nodes/20"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "Walls",
+            "id": "Walls",
+            "uniqueId": 40,
+            "type": "Mesh",
+            "position": [
+                17.3216,
+                0,
+                11.4594
+            ],
+            "rotationQuaternion": [
+                0,
+                1,
+                0,
+                0
+            ],
+            "scaling": [
+                0.2418,
+                0.2418,
+                0.2418
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "__root__",
+            "isUnIndexed": false,
+            "geometryId": "Walls",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 259,
+                    "indexStart": 0,
+                    "indexCount": 930
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/18/primitives/0",
+                        "/nodes/21"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "luxury_bed_cover",
+            "id": "luxury_bed_cover",
+            "uniqueId": 43,
+            "type": "Mesh",
+            "position": [
+                0,
+                0.2139,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "luxury_bed",
+            "isUnIndexed": false,
+            "geometryId": "luxury_bed_cover",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 26797,
+                    "indexStart": 0,
+                    "indexCount": 151296
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/19/primitives/0",
+                        "/nodes/23"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "luxury_bed_cushion.001",
+            "id": "luxury_bed_cushion.001",
+            "uniqueId": 45,
+            "type": "Mesh",
+            "position": [
+                0,
+                0.0026,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "luxury_bed",
+            "isUnIndexed": false,
+            "geometryId": "luxury_bed_cushion.001",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 30116,
+                    "indexStart": 0,
+                    "indexCount": 105216
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/20/primitives/0",
+                        "/nodes/24"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "luxury_bed_cushion.002",
+            "id": "luxury_bed_cushion.002",
+            "uniqueId": 47,
+            "type": "Mesh",
+            "position": [
+                0,
+                0.0026,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "luxury_bed",
+            "isUnIndexed": false,
+            "geometryId": "luxury_bed_cushion.002",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 5134,
+                    "indexStart": 0,
+                    "indexCount": 27648
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/21/primitives/0",
+                        "/nodes/25"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "luxury_bed_cushion.003",
+            "id": "luxury_bed_cushion.003",
+            "uniqueId": 49,
+            "type": "Mesh",
+            "position": [
+                0,
+                0.0026,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "luxury_bed",
+            "isUnIndexed": false,
+            "geometryId": "luxury_bed_cushion.003",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 2007,
+                    "indexStart": 0,
+                    "indexCount": 10752
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/22/primitives/0",
+                        "/nodes/26"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "luxury_bed_cushion.004",
+            "id": "luxury_bed_cushion.004",
+            "uniqueId": 51,
+            "type": "Mesh",
+            "position": [
+                0,
+                0.0026,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "luxury_bed",
+            "isUnIndexed": false,
+            "geometryId": "luxury_bed_cushion.004",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 2660,
+                    "indexStart": 0,
+                    "indexCount": 12288
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/23/primitives/0",
+                        "/nodes/27"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "luxury_bed_cushion.004_detail",
+            "id": "luxury_bed_cushion.004_detail",
+            "uniqueId": 53,
+            "type": "Mesh",
+            "position": [
+                0.0891,
+                0.9265,
+                -0.2924
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "luxury_bed",
+            "isUnIndexed": false,
+            "geometryId": "luxury_bed_cushion.004_detail",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 65535,
+                    "indexStart": 0,
+                    "indexCount": 65535
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/24/primitives/0",
+                        "/nodes/28"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "luxury_bed_cushion.004_detail1",
+            "id": "luxury_bed_cushion.004_detail1",
+            "uniqueId": 55,
+            "type": "Mesh",
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "luxury_bed_cushion.004_detail",
+            "isUnIndexed": false,
+            "geometryId": "luxury_bed_cushion.004_detail1",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 65535,
+                    "indexStart": 0,
+                    "indexCount": 65535
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/25/primitives/0",
+                        "/nodes/29"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "luxury_bed_cushion.004_detail2",
+            "id": "luxury_bed_cushion.004_detail2",
+            "uniqueId": 57,
+            "type": "Mesh",
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "luxury_bed_cushion.004_detail",
+            "isUnIndexed": false,
+            "geometryId": "luxury_bed_cushion.004_detail2",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 37410,
+                    "indexStart": 0,
+                    "indexCount": 37410
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/26/primitives/0",
+                        "/nodes/30"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "luxury_bed_cushion",
+            "id": "luxury_bed_cushion",
+            "uniqueId": 59,
+            "type": "Mesh",
+            "position": [
+                0,
+                0.0026,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "luxury_bed",
+            "isUnIndexed": false,
+            "geometryId": "luxury_bed_cushion",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 4011,
+                    "indexStart": 0,
+                    "indexCount": 21504
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/27/primitives/0",
+                        "/nodes/31"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "luxury_bed_footboard",
+            "id": "luxury_bed_footboard",
+            "uniqueId": 61,
+            "type": "Mesh",
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "luxury_bed",
+            "isUnIndexed": false,
+            "geometryId": "luxury_bed_footboard",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 1959,
+                    "indexStart": 0,
+                    "indexCount": 4188
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/28/primitives/0",
+                        "/nodes/32"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "luxury_bed_headboard",
+            "id": "luxury_bed_headboard",
+            "uniqueId": 63,
+            "type": "Mesh",
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "luxury_bed",
+            "isUnIndexed": false,
+            "geometryId": "luxury_bed_headboard",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 7612,
+                    "indexStart": 0,
+                    "indexCount": 11796
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/29/primitives/0",
+                        "/nodes/33"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "luxury_bed_headboardtop",
+            "id": "luxury_bed_headboardtop",
+            "uniqueId": 65,
+            "type": "Mesh",
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "luxury_bed",
+            "isUnIndexed": false,
+            "geometryId": "luxury_bed_headboardtop",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 65533,
+                    "indexStart": 0,
+                    "indexCount": 146775
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/30/primitives/0",
+                        "/nodes/34"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "luxury_bed_headboardtop1",
+            "id": "luxury_bed_headboardtop1",
+            "uniqueId": 67,
+            "type": "Mesh",
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "luxury_bed_headboardtop",
+            "isUnIndexed": false,
+            "geometryId": "luxury_bed_headboardtop1",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 29005,
+                    "indexStart": 0,
+                    "indexCount": 43209
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/31/primitives/0",
+                        "/nodes/35"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "luxury_bed_mattress",
+            "id": "luxury_bed_mattress",
+            "uniqueId": 69,
+            "type": "Mesh",
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "luxury_bed",
+            "isUnIndexed": false,
+            "geometryId": "luxury_bed_mattress",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 7485,
+                    "indexStart": 0,
+                    "indexCount": 10368
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/32/primitives/0",
+                        "/nodes/36"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "Widescreen TV",
+            "id": "Widescreen TV",
+            "uniqueId": 71,
+            "type": "Mesh",
+            "position": [
+                -2.3984,
+                6.2416,
+                -11.3681
+            ],
+            "rotationQuaternion": [
+                0,
+                -0.0000036732051033465748,
+                0,
+                0.999999999993254
+            ],
+            "scaling": [
+                5.312,
+                5.312,
+                5.312
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "__root__",
+            "isUnIndexed": false,
+            "geometryId": "Widescreen TV",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 144,
+                    "indexStart": 0,
+                    "indexCount": 822
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/33/primitives/0",
+                        "/nodes/37"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "wideScreenGlass",
+            "id": "wideScreenGlass",
+            "uniqueId": 73,
+            "type": "Mesh",
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "Widescreen TV",
+            "isUnIndexed": false,
+            "geometryId": "wideScreenGlass",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 12,
+                    "indexStart": 0,
+                    "indexCount": 30
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/34/primitives/0",
+                        "/nodes/38"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "modern_tvcabinet",
+            "id": "modern_tvcabinet",
+            "uniqueId": 75,
+            "type": "Mesh",
+            "position": [
+                -2.274,
+                -0.0006,
+                -9.7524
+            ],
+            "rotationQuaternion": [
+                0,
+                -0.0000036732051033465748,
+                0,
+                0.999999999993254
+            ],
+            "scaling": [
+                5.3529,
+                5.3529,
+                5.3529
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "__root__",
+            "isUnIndexed": false,
+            "geometryId": "modern_tvcabinet",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 2176,
+                    "indexStart": 0,
+                    "indexCount": 4524
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/35/primitives/0",
+                        "/nodes/39"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "lampBase",
+            "id": "lampBase",
+            "uniqueId": 77,
+            "type": "Mesh",
+            "position": [
+                -8.3466,
+                4.1649,
+                10.0296
+            ],
+            "rotationQuaternion": [
+                0,
+                1,
+                0,
+                0
+            ],
+            "scaling": [
+                0.2201,
+                0.0267,
+                0.2201
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "__root__",
+            "isUnIndexed": false,
+            "geometryId": "lampBase",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 25,
+                    "indexStart": 0,
+                    "indexCount": 36
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/36/primitives/0",
+                        "/nodes/40"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "lamp.body",
+            "id": "lamp.body",
+            "uniqueId": 79,
+            "type": "Mesh",
+            "position": [
+                -0.0257,
+                22.2957,
+                0
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                0.7082,
+                22.0566,
+                0.7082
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "lampBase",
+            "isUnIndexed": false,
+            "geometryId": "lamp.body",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 25,
+                    "indexStart": 0,
+                    "indexCount": 36
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/37/primitives/0",
+                        "/nodes/41"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "lamp.neck",
+            "id": "lamp.neck",
+            "uniqueId": 81,
+            "type": "Mesh",
+            "position": [
+                -0.0299,
+                48.7039,
+                -0.0469
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                0.131,
+                39.073,
+                0.131
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "lampBase",
+            "isUnIndexed": false,
+            "geometryId": "lamp.neck",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 310,
+                    "indexStart": 0,
+                    "indexCount": 372
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/38/primitives/0",
+                        "/nodes/42"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "lamp.shade",
+            "id": "lamp.shade",
+            "uniqueId": 83,
+            "type": "Mesh",
+            "position": [
+                -0.0179,
+                67.2043,
+                -0.0229
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                2.1227,
+                20.4479,
+                2.1227
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "lampBase",
+            "isUnIndexed": false,
+            "geometryId": "lamp.shade",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 2048,
+                    "indexStart": 0,
+                    "indexCount": 12288
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/39/primitives/0",
+                        "/nodes/43"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "lamp.top",
+            "id": "lamp.top",
+            "uniqueId": 85,
+            "type": "Mesh",
+            "position": [
+                -0.0289,
+                87.906,
+                -0.0432
+            ],
+            "rotationQuaternion": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "scaling": [
+                0.2178,
+                1.7947,
+                0.2178
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "lampBase",
+            "isUnIndexed": false,
+            "geometryId": "lamp.top",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 3283,
+                    "indexStart": 0,
+                    "indexCount": 3780
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/40/primitives/0",
+                        "/nodes/44"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "Nightstand bottom",
+            "id": "Nightstand bottom",
+            "uniqueId": 88,
+            "type": "Mesh",
+            "position": [
+                7.0582,
+                0.0503,
+                1.688
+            ],
+            "rotationQuaternion": [
+                -0.707105482506466,
+                -0.000002597353007557415,
+                0.7071080798547033,
+                -0.0000025973434669646147
+            ],
+            "scaling": [
+                0.6745,
+                1,
+                0.864
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "nightstandMaster",
+            "isUnIndexed": false,
+            "geometryId": "Nightstand bottom",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 26,
+                    "indexStart": 0,
+                    "indexCount": 36
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/41/primitives/0",
+                        "/nodes/46"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "Nightstand.drawer",
+            "id": "Nightstand.drawer",
+            "uniqueId": 90,
+            "type": "Mesh",
+            "position": [
+                -0.1634,
+                -1.7534,
+                -0.0035
+            ],
+            "rotationQuaternion": [
+                0.7071080798547033,
+                0.000002597353007557415,
+                -0.707105482506466,
+                -0.0000025973434669646147
+            ],
+            "scaling": [
+                0.9087,
+                0.4011,
+                1.0533
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "Nightstand bottom",
+            "isUnIndexed": false,
+            "geometryId": "Nightstand.drawer",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 126,
+                    "indexStart": 0,
+                    "indexCount": 156
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/42/primitives/0",
+                        "/nodes/47"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "Nightstand.drawerstop",
+            "id": "Nightstand.drawerstop",
+            "uniqueId": 92,
+            "type": "Mesh",
+            "position": [
+                -1.1646,
+                -2.1958,
+                0.0025
+            ],
+            "rotationQuaternion": [
+                0.7071080798547033,
+                0.000002597353007557415,
+                -0.707105482506466,
+                -0.0000025973434669646147
+            ],
+            "scaling": [
+                0.9862,
+                0.0451,
+                0.0635
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "Nightstand bottom",
+            "isUnIndexed": false,
+            "geometryId": "Nightstand.drawerstop",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 25,
+                    "indexStart": 0,
+                    "indexCount": 36
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/43/primitives/0",
+                        "/nodes/48"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "Nightstand.knob",
+            "id": "Nightstand.knob",
+            "uniqueId": 94,
+            "type": "Mesh",
+            "position": [
+                -1.4586,
+                -1.7784,
+                0.0307
+            ],
+            "rotationQuaternion": [
+                -0.499999999996627,
+                0.499999999996627,
+                0.5000018366025517,
+                0.4999981633974484
+            ],
+            "scaling": [
+                0.0813,
+                0.0635,
+                0.0702
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "Nightstand bottom",
+            "isUnIndexed": false,
+            "geometryId": "Nightstand.knob",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 29721,
+                    "indexStart": 0,
+                    "indexCount": 75264
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/44/primitives/0",
+                        "/nodes/49"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "Nightstand bottom drawer",
+            "id": "Nightstand bottom drawer",
+            "uniqueId": 96,
+            "type": "Mesh",
+            "position": [
+                -0.1182,
+                0.1776,
+                0.0004
+            ],
+            "rotationQuaternion": [
+                0.7071080798547033,
+                0.000002597353007557415,
+                -0.707105482506466,
+                -0.0000025973434669646147
+            ],
+            "scaling": [
+                0.919,
+                0.2013,
+                1.0767
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "Nightstand bottom",
+            "isUnIndexed": false,
+            "geometryId": "Nightstand bottom drawer",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 126,
+                    "indexStart": 0,
+                    "indexCount": 156
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/45/primitives/0",
+                        "/nodes/50"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "Nightstand left side",
+            "id": "Nightstand left side",
+            "uniqueId": 98,
+            "type": "Mesh",
+            "position": [
+                -0.1031,
+                -0.9255,
+                1.0068
+            ],
+            "rotationQuaternion": [
+                -0.7071080798594737,
+                0,
+                0,
+                0.7071054825112364
+            ],
+            "scaling": [
+                1.1314,
+                1.1575,
+                1.3161
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "Nightstand bottom",
+            "isUnIndexed": false,
+            "geometryId": "Nightstand left side",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 26,
+                    "indexStart": 0,
+                    "indexCount": 36
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/46/primitives/0",
+                        "/nodes/51"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "Nightstand right.001",
+            "id": "Nightstand right.001",
+            "uniqueId": 100,
+            "type": "Mesh",
+            "position": [
+                0.9394,
+                -0.9255,
+                -0.0061
+            ],
+            "rotationQuaternion": [
+                -0.499999999996627,
+                -0.499999999996627,
+                -0.5000018366025517,
+                0.4999981633974484
+            ],
+            "scaling": [
+                0.9529,
+                1.4826,
+                1.3161
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "Nightstand bottom",
+            "isUnIndexed": false,
+            "geometryId": "Nightstand right.001",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 26,
+                    "indexStart": 0,
+                    "indexCount": 36
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/47/primitives/0",
+                        "/nodes/52"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "Nightstand right",
+            "id": "Nightstand right",
+            "uniqueId": 102,
+            "type": "Mesh",
+            "position": [
+                -0.1031,
+                -0.9255,
+                -0.9314
+            ],
+            "rotationQuaternion": [
+                -0.7071080798594737,
+                0,
+                0,
+                0.7071054825112364
+            ],
+            "scaling": [
+                1.1314,
+                1.1575,
+                1.3161
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "Nightstand bottom",
+            "isUnIndexed": false,
+            "geometryId": "Nightstand right",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 26,
+                    "indexStart": 0,
+                    "indexCount": 36
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/48/primitives/0",
+                        "/nodes/53"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "Nightstand top",
+            "id": "Nightstand top",
+            "uniqueId": 104,
+            "type": "Mesh",
+            "position": [
+                -0.1082,
+                -2.2353,
+                0.0066
+            ],
+            "rotationQuaternion": [
+                0.7071080798547033,
+                0.000002597353007557415,
+                -0.707105482506466,
+                -0.0000025973434669646147
+            ],
+            "scaling": [
+                1.0215,
+                1,
+                1.1209
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": false,
+            "pickable": true,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": 0,
+            "parentId": "Nightstand bottom",
+            "isUnIndexed": false,
+            "geometryId": "Nightstand top",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 131,
+                    "indexStart": 0,
+                    "indexCount": 156
+                }
+            ],
+            "materialId": "default material",
+            "metadata": {
+                "gltf": {
+                    "pointers": [
+                        "/meshes/16/primitives/0",
+                        "/nodes/19"
+                    ]
+                }
+            },
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        },
+        {
+            "name": "hdrSkyBox",
+            "id": "hdrSkyBox",
+            "uniqueId": 110,
+            "type": "Mesh",
+            "position": [
+                0,
+                0,
+                0
+            ],
+            "rotation": [
+                0,
+                0,
+                0
+            ],
+            "scaling": [
+                1,
+                1,
+                1
+            ],
+            "localMatrix": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 1,
+                "11": 0,
+                "12": 0,
+                "13": 0,
+                "14": 0,
+                "15": 1
+            },
+            "isEnabled": true,
+            "isVisible": true,
+            "infiniteDistance": true,
+            "pickable": false,
+            "receiveShadows": false,
+            "billboardMode": 0,
+            "visibility": 1,
+            "checkCollisions": false,
+            "isBlocker": false,
+            "overrideMaterialSideOrientation": null,
+            "isUnIndexed": false,
+            "geometryId": "5becca8a-806d-468a-9bc9-67b4e0e4b350",
+            "subMeshes": [
+                {
+                    "materialIndex": 0,
+                    "verticesStart": 0,
+                    "verticesCount": 24,
+                    "indexStart": 0,
+                    "indexCount": 36
+                }
+            ],
+            "materialId": "skyBox",
+            "instances": [],
+            "animations": [],
+            "ranges": [],
+            "layerMask": 268435455,
+            "alphaIndex": 1.7976931348623157e+308,
+            "hasVertexAlpha": false,
+            "overlayAlpha": 0.5,
+            "overlayColor": [
+                1,
+                0,
+                0
+            ],
+            "applyFog": true
+        }
+    ],
+    "particleSystems": [],
+    "postProcesses": [],
+    "sounds": [],
+    "useDelayedTextureLoading": true
+}

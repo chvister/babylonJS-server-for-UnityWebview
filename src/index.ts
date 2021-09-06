@@ -22,7 +22,7 @@ import "@babylonjs/loaders/glTF/2.0/glTFLoader"
 const canvas = document.querySelector("#renderCanvas") as HTMLCanvasElement
 const engine = new Engine(canvas, true, undefined, true)
 const scene = new Scene(engine)
-const camera = new FreeCamera("FreeCamera", new Vector3(5, 5, 5), scene);
+const camera = new FreeCamera("FreeCamera", new Vector3(1, -5, 1), scene);
 
 // cameraSettings(scene, canvas)
 // lightSettings(scene)
@@ -43,32 +43,33 @@ engine.runRenderLoop(() => scene.render())
 
 // const roomModel = SceneLoader.ImportMesh(
 //     "",
-//     "https://www.babylonjs.com/scenes/espilit/",
-//     "espilit.incremental.babylon",
+//     "scene/",
+//     "scene1.babylon",
 //     scene,
 //     function (mesh) {
 //         console.log(mesh, 'mesh')
-//         const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI")
-//         //@ts-ignore
-//         scene.activeCamera.attachControl(canvas, true);
-//         roomModelLabelOnClick(mesh, scene, modelTexture)
+//         // const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI")
+//         // //@ts-ignore
+//         // scene.activeCamera.attachControl(canvas, true);
+//         // roomModelLabelOnClick(mesh, scene, modelTexture)
 
-//         // roomModelLabelOnClickXr(mesh, scene, xr, modelTexture)
-//         // hideObjectByDistance(mesh)
-//         //LOD simplyfy
-//         //@ts-ignore
-//         mesh[105].optimizeIndices(function() {
-//             //@ts-ignore
-// 			mesh[105].simplify([{distance:1, quality:0.9}, {distance:10, quality: 0.1}], false, SimplificationType.QUADRATIC, function() {
-// 			console.log("simplification finished");
-// 		 });
-// 		})
+//         // // roomModelLabelOnClickXr(mesh, scene, xr, modelTexture)
+//         // // hideObjectByDistance(mesh)
+//         // //LOD simplyfy
+//         // //@ts-ignore
+//         // mesh[105].optimizeIndices(function() {
+//         //     //@ts-ignore
+// 		// 	mesh[105].simplify([{distance:1, quality:0.9}, {distance:10, quality: 0.1}], false, SimplificationType.QUADRATIC, function() {
+// 		// 	console.log("simplification finished");
+// 		//  });
+// 		// })
 //     }
 // )
-// "scene/babylon6/",
-//     "konstrukcia.incremental.babylon",
-SceneLoader.Append("scene/babylon-arena/",
-    "arena.incremental.babylon",
+
+// SceneLoader.Append("https://www.babylonjs.com/scenes/espilit/",
+//         "espilit.incremental.babylon", scene, function (mesh) {
+SceneLoader.Append("scene/babylon-scene/",
+    "scene.incremental.babylon",
     scene, function (mesh) {
         console.log(mesh.meshes, 'mesh meshes');
         console.log(mesh, 'mesh');
