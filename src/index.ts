@@ -65,29 +65,17 @@ engine.runRenderLoop(() => scene.render())
 // 		})
 //     }
 // )
-
-SceneLoader.Append("https://www.babylonjs.com/scenes/espilit/",
-    "espilit.incremental.babylon", scene, function (mesh) {
+// "scene/babylon6/",
+//     "konstrukcia.incremental.babylon",
+SceneLoader.Append("scene/babylon-construction/",
+    "konstrukcia.incremental.babylon",
+    scene, function (mesh) {
         console.log(mesh.meshes, 'mesh meshes');
         console.log(mesh, 'mesh');
         const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI")
         roomModelLabelOnClick(mesh.meshes, scene, modelTexture)
         //@ts-ignore
         scene.activeCamera.attachControl(canvas, true);
-        simplifyObjectByDistance(mesh.meshes)
-        hideObjectByDistance(mesh.meshes)
-    });
-
-SceneLoader.Append("scene/",
-    "gladiatord.gltf", scene, function (mesh) {
-        console.log(mesh.meshes, 'mesh meshes');
-        const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI")
-        roomModelLabelOnClick(mesh.meshes, scene, modelTexture)
-        lightSettings(scene)
-        mesh.meshes.forEach((model:any, index:any) => {
-            if(index === 125 || index === 126){
-                //@ts-ignore TODO
-                model.addLODLevel(15, null)
-            }
-        })
+        // simplifyObjectByDistance(mesh.meshes)
+        // hideObjectByDistance(mesh.meshes)
     });
