@@ -3,15 +3,12 @@ import {
 } from "@babylonjs/core"
 
 export const simplifyObjectByDistance = (mesh: AbstractMesh[]) => {
-    setTimeout(function () {
-        console.log('test1');
+    console.log('test1');
+    //@ts-ignore
+    mesh[40].optimizeIndices(function () {
         //@ts-ignore
-        mesh[25].optimizeIndices(function () {
-            console.log('test2');
-            //@ts-ignore
-            mesh[25].simplify([{ distance: 10, quality: 1 }, { distance: 50, quality: 0.1 }], false, SimplificationType.QUADRATIC, function () {
-                console.log("simplification finished");
-            });
+        mesh[40].simplify([{ distance: 1, quality: 0.9 }, { distance: 10, quality: 0.1 }], false, SimplificationType.QUADRATIC, function () {
+            console.log("simplification finished");
         });
-    }, 5000);
-}
+    })
+};

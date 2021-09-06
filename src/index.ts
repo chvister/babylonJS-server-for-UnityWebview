@@ -81,8 +81,10 @@ SceneLoader.Append("scene/babylon-scene/",
         roomModelLabelOnClick(mesh.meshes, scene, modelTexture)
         //@ts-ignore
         scene.activeCamera.attachControl(canvas, true);
-        // simplifyObjectByDistance(mesh.meshes)
-        // hideObjectByDistance(mesh.meshes)
+        setTimeout(function () {
+            simplifyObjectByDistance(mesh.meshes)
+        }, 8000);
+        hideObjectByDistance(mesh.meshes)
         // scene.debugLayer.show({
         //     // embedMode: true,
         //   });
