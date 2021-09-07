@@ -1,7 +1,7 @@
 import {
     Engine,
     Scene,
-    SceneLoader, FreeCamera, Vector3
+    SceneLoader, FreeCamera, Vector3, Curve3, Mesh
 } from "@babylonjs/core"
 import {
     AdvancedDynamicTexture
@@ -24,7 +24,7 @@ import "@babylonjs/loaders/glTF/2.0/glTFLoader"
 const canvas = document.querySelector("#renderCanvas") as HTMLCanvasElement
 const engine = new Engine(canvas, true, undefined, true)
 const scene = new Scene(engine)
-// const camera = new FreeCamera("FreeCamera", new Vector3(-11.961, 3.388, -9.275), scene);
+// const camera = new FreeCamera("FreeCamera", new Vector3(-11.961, 30.388, -9.275), scene);
 //TODO remove inspector
 new Inspector()
 
@@ -72,19 +72,22 @@ engine.runRenderLoop(() => scene.render())
 
 // SceneLoader.Append("https://www.babylonjs.com/scenes/espilit/",
 //         "espilit.incremental.babylon", scene, function (mesh) {
-SceneLoader.Append("scene/babylon-scene/",
-    "scene.incremental.babylon",
+SceneLoader.Append("scene/",
+    "arenaGlb.glb",
     scene, function (mesh) {
         console.log(mesh.meshes, 'mesh meshes');
-        console.log(mesh, 'mesh');
-        const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI")
-        roomModelLabelOnClick(mesh.meshes, scene, modelTexture)
+        // console.log(mesh, 'mesh');
+        // const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI")
+        // roomModelLabelOnClick(mesh.meshes, scene, modelTexture)
+        // cameraSettings(scene, canvas)
+        // lightSettings(scene)
+        // groundSettings(scene)
         //@ts-ignore
-        scene.activeCamera.attachControl(canvas, true);
-        setTimeout(function () {
-            simplifyObjectByDistance(mesh.meshes)
-        }, 8000);
-        hideObjectByDistance(mesh.meshes)
+        // scene.activeCamera.attachControl(canvas, true);
+        // setTimeout(function () {
+        //     simplifyObjectByDistance(mesh.meshes)
+        // }, 8000);
+        // hideObjectByDistance(mesh.meshes)
         // scene.debugLayer.show({
         //     // embedMode: true,
         //   });
