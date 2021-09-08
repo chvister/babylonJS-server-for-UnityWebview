@@ -32,7 +32,9 @@
         "prestart": "yarn install",
         "start": "npx webpack serve --config webpack.dev.js",
         "build": "npx webpack --config webpack.prod.js",
-        "lint": "npx eslint . --ext .ts,.tsx"
+        "lint": "npx eslint . --ext .ts,.tsx",
+        "postinstall": "webpack -p --config ./webpack.prod.config.js --progress"
+
     },
     "repository": {
         "type": "git",
