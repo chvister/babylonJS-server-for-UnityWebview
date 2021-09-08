@@ -1,7 +1,7 @@
 import {
     Engine,
     Scene,
-    SceneLoader, FreeCamera, Vector3
+    SceneLoader, FreeCamera, Vector3,Color4
 } from "@babylonjs/core"
 import {
     AdvancedDynamicTexture
@@ -26,7 +26,7 @@ const engine = new Engine(canvas, true, undefined, true)
 const scene = new Scene(engine)
 // const camera = new FreeCamera("FreeCamera", new Vector3(-11.961, 3.388, -9.275), scene);
 //TODO remove inspector
-new Inspector()
+//new Inspector()
 
 cameraSettings(scene, canvas)
 lightSettings(scene)
@@ -72,11 +72,12 @@ engine.runRenderLoop(() => scene.render())
 
 SceneLoader.Append("scene/babylon-arena/",
 "arena-babylon.incremental.babylon",
-// SceneLoader.Append("scene/",
-//     "arenaGlb.glb",
+
     scene, function (mesh) {
         console.log(mesh.meshes, 'mesh meshes');
         console.log(mesh, 'mesh');
+        scene.clearColor = new Color4(0, 0, 0, 0)
+
         const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI")
         roomModelLabelOnClick(mesh.meshes, scene, modelTexture)
         scene.removeMesh(mesh.meshes[6])
