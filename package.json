@@ -29,7 +29,7 @@
 
     },
     "scripts": {
-        "prestart": "yarn install && yarn start",
+        "prestart": "yarn install",
         "start": "npx webpack serve --config webpack.dev.js",
         "build": "npx webpack --config webpack.prod.js",
         "lint": "npx eslint . --ext .ts,.tsx"
