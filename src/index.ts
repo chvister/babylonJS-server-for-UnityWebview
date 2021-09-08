@@ -70,15 +70,16 @@ engine.runRenderLoop(() => scene.render())
 //     }
 // )
 
-// SceneLoader.Append("https://www.babylonjs.com/scenes/espilit/",
-//         "espilit.incremental.babylon", scene, function (mesh) {
 SceneLoader.Append("scene/babylon-arena/",
-    "arena-babylon.incremental.babylon",
+"arena-babylon.incremental.babylon",
+// SceneLoader.Append("scene/",
+//     "arenaGlb.glb",
     scene, function (mesh) {
         console.log(mesh.meshes, 'mesh meshes');
         console.log(mesh, 'mesh');
         const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI")
         roomModelLabelOnClick(mesh.meshes, scene, modelTexture)
+        scene.removeMesh(mesh.meshes[6])
         //@ts-ignore
         scene.activeCamera.attachControl(canvas, true);
         // setTimeout(function () {
@@ -87,4 +88,4 @@ SceneLoader.Append("scene/babylon-arena/",
         // hideObjectByDistance(mesh.meshes)
     });
 //TODO remove inspector
-// scene.debugLayer.show();
+scene.debugLayer.show();
