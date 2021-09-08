@@ -80,8 +80,10 @@ SceneLoader.Append("scene/babylon-arena/",
         const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI")
         roomModelLabelOnClick(mesh.meshes, scene, modelTexture)
         scene.removeMesh(mesh.meshes[6])
+        scene.removeMesh(mesh.meshes[2])
         //@ts-ignore
         scene.activeCamera.attachControl(canvas, true);
+        // scene.createDefaultCamera(true, true, true);
         // setTimeout(function () {
         //     simplifyObjectByDistance(mesh.meshes)
         // }, 8000);
