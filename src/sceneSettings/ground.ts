@@ -9,7 +9,7 @@ export const groundSettings = (scene: Scene) => {
     ground.material = material
     material.diffuseColor = new Color3(1, 1, 1);
     material.backFaceCulling = false;
-    ground.position = new Vector3(0, 6.8, 0);
+    ground.position = new Vector3(0, -1, 0);
     ground.rotation = new Vector3(Math.PI / 2, 0, 0);
     ground.checkCollisions = true;
 
