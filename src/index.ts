@@ -56,7 +56,6 @@ const box = Mesh.CreateBox("box", 1, scene);
 SceneLoader.Append(
     "scene/",
     "BoomBox.glb",
-
     scene,
     function (mesh) {
         console.log(mesh.meshes, "mesh meshes");
