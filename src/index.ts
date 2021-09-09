@@ -1,7 +1,7 @@
 import {
     Engine,
     Scene,
-    SceneLoader, FreeCamera, Vector3,Color4
+    SceneLoader, FreeCamera, Vector3,Color4,DeviceOrientationCamera
 } from "@babylonjs/core"
 import {
     AdvancedDynamicTexture
@@ -24,17 +24,19 @@ import "@babylonjs/loaders/glTF/2.0/glTFLoader"
 const canvas = document.querySelector("#renderCanvas") as HTMLCanvasElement
 const engine = new Engine(canvas, true, undefined, true)
 const scene = new Scene(engine)
-// const camera = new FreeCamera("FreeCamera", new Vector3(-11.961, 3.388, -9.275), scene);
+//const camera = new DeviceOrientationCamera("DevOr_camera", new Vector3(0, 0, 0), scene);
 
 
-cameraSettings(scene, canvas)
+const camera = cameraSettings(scene, canvas)
 lightSettings(scene)
 groundSettings(scene)
 //@ts-ignore
 window.newBackgroundColor = (r: float, g: float, b: float, a: float) => {
     scene.clearColor = new Color4(r, g, b, a);
+    console.log(camera)
+    camera.position = new Vector3(10,200,10);
+    
 }
-
 
 
 window.addEventListener("resize", () => engine.resize())

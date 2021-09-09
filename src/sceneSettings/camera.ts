@@ -13,6 +13,8 @@ const camera = new FreeCamera("FreeCamera", new Vector3(0, 7, 0), scene);
     camera.inputs.addMouseWheel();
     scene?.activeCamera?.attachControl(canvas, true);
     setupCameraForCollisions(camera);
+
+    return camera;
 }
 
 export const setupCameraForCollisions = (camera: FreeCamera) => {
