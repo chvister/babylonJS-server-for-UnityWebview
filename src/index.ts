@@ -63,7 +63,7 @@ window.newCameraRotation = (x: float, y: float, z: float, w: float) => {
 
 //@ts-ignore
 window.newCameraPosition = (x: float, y: float, z: float) => {
-    camera.position = new Vector3(z, y, x);
+    camera.position = new Vector3(z, y, -x);
     console.log(camera.position);
 };
 
