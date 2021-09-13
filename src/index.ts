@@ -45,8 +45,8 @@ window.newBackgroundColor = (r: float, g: float, b: float, a: float) => {
 
 //@ts-ignore
 window.newCameraRotationAndPosition = (x: float,y: float,z: float,xp: float,yp: float,zp: float) => {
-    camera.rotation = new Vector3(x, y, z);
-    camera.position = new Vector3(xp, yp, zp);
+    camera.rotation = new Vector3(x, y, z).normalize();
+    //camera.position = new Vector3(xp, yp, zp);
 };
 window.addEventListener("resize", () => engine.resize());
 engine.runRenderLoop(() => scene.render());
@@ -60,7 +60,7 @@ SceneLoader.Append(
     function (mesh) {
         console.log(mesh.meshes, "mesh meshes");
         console.log(mesh, "mesh");
-        // scene.clearColor = new Color4(0, 0, 0, 0)
+        scene.clearColor = new Color4(0, 0, 0, 0)
 
         const modelTexture = AdvancedDynamicTexture.CreateFullscreenUI("UI");
         roomModelLabelOnClick(mesh.meshes, scene, modelTexture);
