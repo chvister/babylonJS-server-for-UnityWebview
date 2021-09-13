@@ -154,7 +154,7 @@ window.newBackgroundColor = (r: float, g: float, b: float, a: float) => {
 
 //@ts-ignore
 window.newCameraRotationAndPosition = (x: float,y: float,z: float,xp: float,yp: float,zp: float) => {
-    camera.rotation = new Vector3(x, y, z).normalize();
+    camera.rotation = new Vector3(x, y, z);
     //camera.position = new Vector3(xp, yp, zp);
     console.log("camera rotation",camera.rotation)
 };
