@@ -50,25 +50,6 @@ camera.attachControl(canvas, true);
 lightSettings(scene);
 groundSettings(scene);
 
-//@ts-ignore
-window.newBackgroundColor = (r: float, g: float, b: float, a: float) => {
-    scene.clearColor = new Color4(r, g, b, a);
-};
-
-//@ts-ignore
-window.newCameraRotation = (x: float, y: float, z: float, w: float) => {
-    camera.rotationQuaternion = new Quaternion(x, y, z, w);
-    console.log(camera.rotationQuaternion);
-};
-
-//@ts-ignore
-window.newCameraPosition = (x: float, y: float, z: float) => {
-    camera.position = new Vector3(z, y, -x);
-    console.log(camera.position);
-};
-
-window.addEventListener("resize", () => engine.resize());
-engine.runRenderLoop(() => scene.render());
 
 
 //boxes
@@ -106,6 +87,8 @@ purpleMat.diffuseColor = new Color3(255, 0, 255);
 purpleMat.emissiveColor = new Color3(255, 0, 255);
 purpleMat.specularColor = new Color3(255, 0, 255);
 
+
+
 var box2 = MeshBuilder.CreateBox("box2", { size: 1 }, scene);
 box2.position = new Vector3(0, 0, -2.5);
 box2.material = greenMat;
@@ -127,6 +110,46 @@ box6.position = new Vector3(0, 2.5, 0);
 box6.material = purpleMat;
 
 scene.clearColor = new Color4(0, 0, 0, 0);
+
+
+//@ts-ignore
+window.newBackgroundColor = (r: float, g: float, b: float, a: float) => {
+    scene.clearColor = new Color4(r, g, b, a);
+    console.log("new background ", scene.clearColor );
+
+};
+
+//@ts-ignore
+window.newCameraRotation = (x: float, y: float, z: float, w: float) => {
+    camera.rotationQuaternion = new Quaternion(x, y, z, w);
+    console.log("new camera rotation ",camera.rotationQuaternion);
+};
+
+//@ts-ignore
+window.newCameraPosition = (x: float, y: float, z: float) => {
+    camera.position = new Vector3(z, y, -x);
+    console.log("new camera position ", camera.position);
+};
+
+//@ts-ignore
+window.createBox = (x: float, y: float, z: float, qx: float, qy: float, qz: float, qw: float) => {
+    var newMat = new StandardMaterial("invisible", scene);
+    newMat.diffuseColor = new Color3(0, 0, 0);
+    newMat.emissiveColor = new Color3(0, 0, 0);
+    newMat.specularColor = new Color3(0, 0, 0);
+
+    const createdBox = MeshBuilder.CreateBox("createdBox", { size: 0.5 }, scene);
+    createdBox.position = new Vector3(z, y, -x);
+    createdBox.rotationQuaternion = new Quaternion(qx, qy, qz, qw);
+    createdBox.material = newMat;
+    console.log("new box position ",createdBox.position)
+    console.log("new box rotationQuaternion ",createdBox.rotationQuaternion)
+};
+
+window.addEventListener("resize", () => engine.resize());
+engine.runRenderLoop(() => scene.render());
+
+
 
 //    SceneLoader.Append("scene/",
 //         "BoomBox.glb",
