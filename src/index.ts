@@ -27,9 +27,21 @@ const scene = new Scene(engine)
 //TODO remove inspector
 //new Inspector()
 
-cameraSettings(scene, canvas)
+const camera = cameraSettings(scene, canvas);
 lightSettings(scene)
 groundSettings(scene)
+
+//@ts-ignore
+window.newBackgroundColor = (r: float, g: float, b: float, a: float) => {
+    scene.clearColor = new Color4(r, g, b, a);
+};
+
+//@ts-ignore
+window.newCameraRotationAndPosition = (x: float,y: float,z: float,xp: float,yp: float,zp: float) => {
+    camera.rotation = new Vector3(x, y, z).normalize();
+    //camera.position = new Vector3(xp, yp, zp);
+};
+
 
 window.addEventListener("resize", () => engine.resize())
 engine.runRenderLoop(() => scene.render())
