@@ -106,24 +106,24 @@ purpleMat.diffuseColor = new Color3(255, 0, 255);
 purpleMat.emissiveColor = new Color3(255, 0, 255);
 purpleMat.specularColor = new Color3(255, 0, 255);
 
-var box2 = MeshBuilder.CreateBox("box2", { size: 5 }, scene);
-box2.position = new Vector3(0, 0, -10);
+var box2 = MeshBuilder.CreateBox("box2", { size: 1 }, scene);
+box2.position = new Vector3(0, 0, -2.5);
 box2.material = greenMat;
 
-var box3 = MeshBuilder.CreateBox("box3", { size: 5 }, scene);
-box3.position = new Vector3(10, 0, 0);
+var box3 = MeshBuilder.CreateBox("box3", { size: 1 }, scene);
+box3.position = new Vector3(2.5, 0, 0);
 box3.material = blueMat;
 
-var box4 = MeshBuilder.CreateBox("box4", { size: 5 }, scene);
-box4.position = new Vector3(-10, 0, 0);
+var box4 = MeshBuilder.CreateBox("box4", { size: 1 }, scene);
+box4.position = new Vector3(-2.5, 0, 0);
 box4.material = yellowMat;
 
-var box5 = MeshBuilder.CreateBox("box5", { size: 5 }, scene);
-box5.position = new Vector3(0, 0, 10);
+var box5 = MeshBuilder.CreateBox("box5", { size: 1 }, scene);
+box5.position = new Vector3(0, 0, 2.5);
 box5.material = orangeMat;
 
-var box6 = MeshBuilder.CreateBox("box6", { size: 5 }, scene);
-box6.position = new Vector3(0, 10, 0);
+var box6 = MeshBuilder.CreateBox("box6", { size: 1 }, scene);
+box6.position = new Vector3(0, 2.5, 0);
 box6.material = purpleMat;
 
 scene.clearColor = new Color4(0, 0, 0, 0);
