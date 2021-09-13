@@ -48,7 +48,7 @@ camera.attachControl(canvas, true);
 
 //const camera = cameraSettings(scene, canvas);
 lightSettings(scene);
-groundSettings(scene);
+//groundSettings(scene);
 
 
 
