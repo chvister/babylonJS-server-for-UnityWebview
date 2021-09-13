@@ -114,7 +114,8 @@ import {
     Color4,
     Color3,
     Mesh,
-    StandardMaterial
+    StandardMaterial,
+    MeshBuilder,Quaternion
 } from "@babylonjs/core";
 import { AdvancedDynamicTexture } from "@babylonjs/gui";
 //TODO remove inspector
@@ -148,7 +149,7 @@ const scene = new Scene(engine);
 var camera = new DeviceOrientationCamera("DevOr_camera", new Vector3(0, 0, 0), scene);
 
     // This targets the camera to scene origin
-    camera.setTarget(new Vector3(0, 0, 10));
+    camera.setTarget(new Vector3(0, 0, -10));
 
     // This attaches the camera to the canvas
     camera.attachControl(canvas, true);
@@ -162,12 +163,16 @@ window.newBackgroundColor = (r: float, g: float, b: float, a: float) => {
 };
 
 //@ts-ignore
-window.newCameraRotationAndPosition = (x: float,y: float,z: float,xp: float,yp: float,zp: float) => {
-    camera.setTarget(new Vector3(x, y, z))
-    //camera.rotation = new Vector3(x, y, z);
-    //camera.position = new Vector3(xp, yp, zp);
-    console.log("camera rotation",camera.rotation)
-};
+window.newCameraRotation = (x: float, y: float, z: float, w: float) =>{
+    camera.rotationQuaternion = new Quaternion(x, y, z, w)
+    console.log(camera.rotationQuaternion)
+}
+//@ts-ignore
+window.newCameraPosition = (x: float, y: float, z: float,) =>{
+    camera.position = new Vector3(x, y, z)
+    console.log(camera.position)
+}
+
 
 window.addEventListener("resize", () => engine.resize());
 engine.runRenderLoop(() => scene.render());
@@ -176,19 +181,76 @@ var material = new StandardMaterial("color",scene);
 material.alpha = 1;
 material.diffuseColor = new Color3(1.0, 0.2, 0.7);
 
-var box = Mesh.CreateBox("sphere1", 2, scene);
-var box1 = Mesh.CreateBox("sphere1", 2, scene);
-var box2 = Mesh.CreateBox("sphere1", 2, scene);
-var box3 = Mesh.CreateBox("sphere1", 2, scene);
+// var box = Mesh.CreateBox("sphere1", 2, scene);
+// var box1 = Mesh.CreateBox("sphere1", 2, scene);
+// var box2 = Mesh.CreateBox("sphere1", 2, scene);
+// var box3 = Mesh.CreateBox("sphere1", 2, scene);
 
-box1.position = new Vector3(5,0,10);
-box2.position = new Vector3(15,0,-5);
-box3.position = new Vector3(20,0,-0);
+// box1.position = new Vector3(5,0,10);
+// box2.position = new Vector3(15,0,-5);
+// box3.position = new Vector3(20,0,-0);
 
-box1.material = material; // <--
-box2.material = material; // <--
-box3.material = material; // <--
-box.material = material; // <--
+// box1.material = material; // <--
+// box2.material = material; // <--
+// box3.material = material; // <--
+// box.material = material; // <--
+
+
+	var redMat = new StandardMaterial("red", scene);
+	redMat.diffuseColor = new Color3(1, 0.1, 0.1);
+	redMat.emissiveColor = new Color3(1,  0.1, 0.1);
+	redMat.specularColor = new Color3(1, 0.1, 0.1);
+	
+	var greenMat = new StandardMaterial("green", scene);
+	greenMat.diffuseColor = new Color3(0, 255, 0);
+	greenMat.emissiveColor = new Color3(0, 255, 0);
+	greenMat.specularColor = new Color3(0, 255, 0);
+	
+	var blueMat = new StandardMaterial("blue", scene);
+	blueMat.diffuseColor = new Color3(0, 0, 255);
+	blueMat.emissiveColor = new Color3(0, 0, 255);
+	blueMat.specularColor = new Color3(0, 0, 255);
+	
+	var yellowMat = new StandardMaterial("yellow", scene);
+	yellowMat.diffuseColor = new Color3(255, 255, 0);
+	yellowMat.emissiveColor = new Color3(255, 255, 0);
+	yellowMat.specularColor = new Color3(255, 255, 0);
+	
+	var orangeMat = new StandardMaterial("orange", scene);
+	orangeMat.diffuseColor = new Color3(1, 0.48, 0);
+	orangeMat.emissiveColor = new Color3(1, 0.48, 0);
+	orangeMat.specularColor = new Color3(1, 0.48, 0);
+	
+	var purpleMat = new StandardMaterial("purple", scene);
+	purpleMat.diffuseColor = new Color3(255, 0, 255);
+	purpleMat.emissiveColor = new Color3(255, 0, 255);
+	purpleMat.specularColor = new Color3(255, 0, 255);
+	
+	// Shapes
+	var box1 = MeshBuilder.CreateBox("box1", {size: 5}, scene);
+	box1.position = new Vector3(0, 10, 0);
+	box1.material = redMat;
+	
+	var box2 = MeshBuilder.CreateBox("box2", {size: 5}, scene);
+	box1.position = new Vector3(0, 0, -10);
+	box1.material = greenMat;
+	
+	var box3 = MeshBuilder.CreateBox("box3", {size: 5}, scene);
+	box3.position = new Vector3(10, 0, 0);
+	box3.material = blueMat;
+	
+	var box4 = MeshBuilder.CreateBox("box4", {size: 5}, scene);
+	box4.position = new Vector3(-10, 0, 0);
+	box4.material = yellowMat;
+	
+	var box5 = MeshBuilder.CreateBox("box5", {size: 5}, scene);
+	box5.position = new Vector3(0, 0, 10);
+	box5.material = orangeMat;
+	
+	var box6 = MeshBuilder.CreateBox("box6", {size: 5}, scene);
+	box6.position = new Vector3(0, 10, 0);
+	box6.material = purpleMat;
+
 
 scene.clearColor = new Color4(0, 0, 0, 0)
 //    SceneLoader.Append("scene/",
