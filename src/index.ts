@@ -137,13 +137,22 @@ import "@babylonjs/loaders/glTF/2.0/glTFLoader";
 import "@babylonjs/loaders/glTF/2.0/Extensions/KHR_draco_mesh_compression";
 
 import "@babylonjs/loaders/glTF/2.0/glTFLoader";
-
+import {
+ 
+    DeviceOrientationCamera
+} from "@babylonjs/core";
 const canvas = document.querySelector("#renderCanvas") as HTMLCanvasElement;
 const engine = new Engine(canvas, true, undefined, true);
 const scene = new Scene(engine);
 //const camera1 = new FreeCamera("FreeCamera", new Vector3(10, 0, 0), scene);
+var camera = new DeviceOrientationCamera("DevOr_camera", new Vector3(0, 0, 0), scene);
 
-const camera = cameraSettings(scene, canvas);
+    // This targets the camera to scene origin
+    camera.setTarget(new Vector3(0, 0, 10));
+
+    // This attaches the camera to the canvas
+    camera.attachControl(canvas, true);
+//const camera = cameraSettings(scene, canvas);
 lightSettings(scene);
 groundSettings(scene);
 
@@ -154,7 +163,8 @@ window.newBackgroundColor = (r: float, g: float, b: float, a: float) => {
 
 //@ts-ignore
 window.newCameraRotationAndPosition = (x: float,y: float,z: float,xp: float,yp: float,zp: float) => {
-    camera.rotation = new Vector3(x, y, z);
+    camera.setTarget(new Vector3(x, y, z))
+    //camera.rotation = new Vector3(x, y, z);
     //camera.position = new Vector3(xp, yp, zp);
     console.log("camera rotation",camera.rotation)
 };

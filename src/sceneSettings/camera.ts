@@ -1,18 +1,22 @@
 import {
     FreeCamera,
     Vector3,
-    Scene
+    Scene,
+    DeviceOrientationCamera
 } from "@babylonjs/core";
 
 export const cameraSettings = (scene: Scene, canvas: HTMLCanvasElement) => {
     //const camera = new FreeCamera("FreeCamera", new Vector3(7, 10, 7), scene);
- const camera = new FreeCamera("FreeCamera", new Vector3(10, 0, 0), scene);
+ //const camera = new FreeCamera("FreeCamera", new Vector3(10, 0, 0), scene);
+ const camera = new DeviceOrientationCamera("DevOr_camera", new Vector3(10, 0, 0), scene);
 
     // const camera = new FreeCamera("FreeCamera", new Vector3(0, 5, -5), scene);
 //const camera = new FreeCamera("FreeCamera", new Vector3(5.610587520283774, 1.0099999, 1.0099999), scene);
     camera.speed = 0.7
-    camera.attachControl(canvas, true);
-    camera.inputs.addMouseWheel();
+    camera.angularSensibility = 10;
+
+    // Attach the camera to the canvas
+    camera.attachControl(canvas, true);    camera.inputs.addMouseWheel();
     scene?.activeCamera?.attachControl(canvas, true);
     setupCameraForCollisions(camera);
 
