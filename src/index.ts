@@ -141,7 +141,7 @@ import "@babylonjs/loaders/glTF/2.0/glTFLoader";
 const canvas = document.querySelector("#renderCanvas") as HTMLCanvasElement;
 const engine = new Engine(canvas, true, undefined, true);
 const scene = new Scene(engine);
-const camera1 = new FreeCamera("FreeCamera", new Vector3(10, 0, 0), scene);
+//const camera1 = new FreeCamera("FreeCamera", new Vector3(10, 0, 0), scene);
 
 const camera = cameraSettings(scene, canvas);
 lightSettings(scene);
@@ -156,12 +156,30 @@ window.newBackgroundColor = (r: float, g: float, b: float, a: float) => {
 window.newCameraRotationAndPosition = (x: float,y: float,z: float,xp: float,yp: float,zp: float) => {
     camera.rotation = new Vector3(x, y, z).normalize();
     //camera.position = new Vector3(xp, yp, zp);
+    console.log("camera rotation",camera.rotation)
 };
 
 window.addEventListener("resize", () => engine.resize());
 engine.runRenderLoop(() => scene.render());
 
+var material = new StandardMaterial("color",scene);
+material.alpha = 1;
+material.diffuseColor = new Color3(1.0, 0.2, 0.7);
+
 var box = Mesh.CreateBox("sphere1", 2, scene);
+var box1 = Mesh.CreateBox("sphere1", 2, scene);
+var box2 = Mesh.CreateBox("sphere1", 2, scene);
+var box3 = Mesh.CreateBox("sphere1", 2, scene);
+
+box1.position = new Vector3(5,0,10);
+box2.position = new Vector3(15,0,-5);
+box3.position = new Vector3(20,0,-0);
+
+box1.material = material; // <--
+box2.material = material; // <--
+box3.material = material; // <--
+box.material = material; // <--
+
 scene.clearColor = new Color4(0, 0, 0, 0)
 //    SceneLoader.Append("scene/",
 //         "BoomBox.glb",
