@@ -4,10 +4,8 @@
     "description": "A simple 3D scene",
     "main": "index.ts",
     "dependencies": {
-        "@babylonjs/core": "^5.0.0-alpha.37",
-        "@babylonjs/gui": "^5.0.0-alpha.37",
-        "@babylonjs/inspector": "^4.2.0",
-        "@babylonjs/loaders": "^5.0.0-alpha.37",
+        "@bentley/imodeljs-backend": "^2.19.26",
+        "@bentley/presentation-backend": "^2.19.26",
         "@typescript-eslint/eslint-plugin": "^2.30.0",
         "@typescript-eslint/parser": "^2.30.0",
         "ammo.js": "github:kripken/ammo.js",
@@ -24,9 +22,6 @@
         "webpack-cli": "^4.7.0",
         "webpack-dev-server": "^3.11.2",
         "webpack-merge": "^5.7.3"
-    },
-    "devDependencies": {
-   
     },
     "scripts": {
         "prestart": "yarn install",
